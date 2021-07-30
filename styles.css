@@ -1,0 +1,99 @@
+body {
+    background-image: url(images/fj-background.gif);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 18px;
+  }
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    
+    color: #F8E16C;
+    background: #2C363F;
+    text-align: center;
+    font-size: 4vw;
+    line-height: 50px;
+    border: 3px solid #2C363F;
+    border-width: 3px 0 3px 0px;
+    
+ 
+}
+
+p {
+    
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.5vw;
+    width: 90%;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+  .wrapper {
+    background: #ede7d3;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1000px;
+    min-height: 1000px;
+    width: 80%;
+ 
+   
+  
+
+  }
+
+.top-header {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    
+   
+   
+}
+
+.guidance-bar {
+    
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    background: #2C363F;
+    text-align: center;
+    font-size: 1.5vw;
+    
+}
+
+.flex-grid-thirds {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Montserrat', sans-serif;
+    
+    margin-left: auto;
+    margin-right: auto;
+     
+  }
+  .flex-grid-thirds .col {
+    width: 32%;
+    
+    
+    
+  }
+
+  .col-1 {
+    width: 32%;
+    background: #3772ff;
+    min-height: 300px;
+    
+  }
+
+  .col-2 {
+    width: 32%;
+    background: #FF3366;
+    min-height: 300px;
+  }
+
+  .col-3 {
+    width: 32%;
+    background: #2ec4b6;
+    min-height: 300px;
+  }
