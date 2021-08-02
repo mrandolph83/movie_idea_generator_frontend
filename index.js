@@ -37,5 +37,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const characterInput = document.querySelector("#character").value
     const setupInput = document.querySelector("#setup").value
     const twistInput = document.querySelector("#twist").value
-    
- }
+   postFetch(characterInput, setupInput, twistInput)
+   }
+
+    function postFetch(characterInput, setupInput, twistInput) {
+      console.log(characterInput, setupInput, twistInput)
+    }
