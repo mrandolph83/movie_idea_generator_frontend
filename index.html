@@ -1,27 +1,32 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+
+
+
+
+
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Movie Idea Generator</title>
-  <meta name="description" content="A simple HTML5 Template for new projects.">
-  <meta name="author" content="SitePoint">
 
-  <meta property="og:title" content="Movie Idea Generator">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.sitepoint.com/a-basic-html5-template/">
-  <meta property="og:description" content="A simple HTML5 Template for new projects.">
-  <meta property="og:image" content="image.png">
-
-  <!-- <link rel="icon" href="/favicon.ico"> -->
-  <!-- <link rel="icon" href="/favicon.svg" type="image/svg+xml"> -->
-  <!-- <link rel="apple-touch-icon" href="/apple-touch-icon.png"> -->
-
+  <!-- CSS file -->
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Google API fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap" rel="stylesheet">
-  <script type="text/javascript" src="index.js"></script>  
+  
+  <!-- Javascript file -->
+  <script src="index.js" charset="utf-8"></script>  
+
 </head>
 
 <body>
@@ -30,30 +35,419 @@
   
   <img src="images/top-header.png" class="top-header">
  <!-- <div id="header"><h1> Movie Idea Generator</h1></div> -->
+ 
+
  <div class="wrapper">
 
   <!-- Page guidance bar -->
    <div class="guidance-bar">
-    - - - Sketchpad - - Your Idea - - Resources - - -
+    🎬 Plot Generator 🤔 Brainstormer 💡 Your Idea 📚 Resources
    </div>
 
    <!-- Welcome text -->
   
    <p>This writing tool is inspired by the <a href="https://www.google.com/search?q=movie+plot+generator+book&rlz=1C5CHFA_enUS848US848&source=lnms&tbm=shop&sa=X&ved=2ahUKEwi5qrTVhYryAhWSXc0KHf7BB1IQ_AUoBHoECAEQBg&biw=1508&bih=865" target="_blank">Movie Plot Generator</a> book, and is a fun and effective way to generate 
-     script ideas of your own. Check out the Idea Generator to create an outlandish logline to start with, or create one on your own by going straight to the Sketchpad. Inspired by
-     the <a href="https://scriptmag.com/features/jeannes-tuesday-screenwriting-tip-brainstorming-techniques" target="_blank">7-Step Brainstorming Technique </a> by Script Magazine's Jeanne Veillette Bowerman, in 2 hours you can take your logline
-     to a fleshed-out idea, save it to your account, or save it as a PDF so you can start writing it out as a script. I hope
-     you get a good laugh or a good dose of inspiration using this writing tool!
+     script ideas of your own. Check out the Plot Generator to create an outlandish logline to start with, or create one on your own by going straight to the Sketchpad. Inspired by
+     the <a href="https://scriptmag.com/features/jeannes-tuesday-screenwriting-tip-brainstorming-techniques" target="_blank">7-Step Brainstorming Technique </a> by Script Magazine's Jeanne Veillette Bowerman, in about 2 hours you can take your logline
+     to a fleshed-out idea, save it to your account, or save it as a PDF so you can start writing it out as a script. Happy writing! ✍️
     
    </p>
 
    <!-- Idea Generator -->
-   <h1>IDEA GENERATOR</h1>
+   <h1>🎬 Plot Generator 🎬</h1>
+   <p>Select as many genre(s) as you want to be mixed into your movie idea. Once the Plot Generator has finished, feel free to
+    shuffle 🔀 through each element individually. At any point, feel free to move on to the Brainstormer to begin sketching out your idea!
+   </p>
+   <p>GENRE(S): 
+    <input type="checkbox" id="Action" name="Action" value="Action">
+    <label for="Action"> Action</label>
+    <input type="checkbox" id="Comedy" name="Comedy" value="Comedy">
+    <label for="Comedy"> Comedy</label>
+    <input type="checkbox" id="Drama" name="Drama" value="Drama">
+    <label for="Drama"> Drama</label>
+    <input type="checkbox" id="Family" name="Family" value="Family">
+    <label for="Family"> Family</label>
+    <input type="checkbox" id="Horror" name="Horror" value="Horror">
+    <label for="Horror"> Horror</label>
+    <input type="checkbox" id="Sci-Fi/Fantasy" name="Sci-Fi/Fantasy" value="Sci-Fi/Fantasy">
+    <label for="Sci-Fi/Fantasy"> Sci-Fi/Fantasy</label>
+    
+   </p>
+   <button type="button" class="plot-gen-btn">🎥 Pitch Me a Movie! 🍿 
+
+   </button>
+   
+   <br>
+
    <div class="flex-grid-thirds">
-    <div class="col-1">This little piggy went to market.</div>
-    <div class="col-2">This little piggy stayed home.</div>
-    <div class="col-3">This little piggy had roast beef.</div>
+    <div class="col-1"><h2><br><br>Character</h2><h3>🔀</h3></div>
+    <div class="col-2"><h2><br><br>Setup</h2><h3>🔀</h3></div>
+    <div class="col-3"><h2><br><br>Twist</h2><h3>🔀</h3></div>
   </div>
-</div>
+
+  <div id="idea-container">
+  </div>
+
+
+
+  <h1>🤔 The Brainstormer 🤔</h1>
+  
+  <p>The below exercises are based on this fabulous article in Script magazine by Jeanne Veillette Bowerman. If you like this tool, I highly recommend 
+    reading the article and/or looking into Script magazine. These seven 15-minute exercises are designed to take your pitch to a fully-formed idea.
+     Once you are finished, check the bottom of the page, where you can see everything you have written and save a copy for yourself.
+ Follow these prompts at your own pace, use the built-in timer if you wish, and good luck!
+    </p>
+
+    <button type="button" class="plot-gen-btn">🧠 Begin Brainstorm! ⚡ 
+
+    </button><br>
+
+  <div class="guidance-bar">
+  
+  <h4> <span style="color: #3772FF">A cop who doesn’t play by the rules </span> <br>
+    <span style="color: #FF3366">befriend(s) the creatures of the forest </span><br>
+    <span style="color: #2EC4B6">with a cunning elf, an obese ogre, and a belligerent dwarf </span></h4>
+    </div>
+
+    <h4 class="brainstorm-name">
+      <h4>Customize Your Pitch</h4>
+
+<!-- Brainstormer User Edit Form  -->
+      <form id="brainstormer-user-edit">
+
+    <span style="color: #3772FF">
+      <label for="character">Character</label><br>
+     <textarea id="character" name="character" rows="3" cols="80">
+        
+      </textarea><br><br>
+    </span>
+
+    <span style="color: #FF3366">
+      <label for="setup">Setup</label><br>
+
+      <textarea id="setup" name="setup" rows="3" cols="80">
+        
+      </textarea><br><br>
+    </span>
+
+    <span style="color: #2EC4B6">
+      <label for="twist">Twist</label><br>
+
+      <textarea id="twist" name="twist" rows="3" cols="80">
+        
+      </textarea><br><br><br>
+    </span>
+    </h4>
+
+    <button type="submit" class="customize-btn"> Update </button><br><br>
+  </form>
+
+
+    <!-- Step 1 Brainstorm -->
+    <div class="guidance-bar">
+    <h4>
+      ⏰ <span style="color: #F8E16C">Step 1 - </span> Stream of Consciousness (15:00)  </h4>
+    </h4>
+  </div>
+  <p>No filter, no judgment; write out everything that comes into your head.</p>
+  
+
+  <p> <em>A cop who doesn’t play by the rules <br> 
+    befriend(s) the creatures of the forest<br>
+  with a cunning elf, an obese ogre, and a belligerent dwarf</em></p>
+  
+    
+  
+  <textarea id="character" name="character" rows="40" cols="80">
+    
+  </textarea><br> <br><br>
+
+  <button type="button" class="plot-gen-btn">🧠 On to Step 2! ⚡ 
+
+  </button><br>
+
+      <!-- Step 2 Brainstorm -->
+      <div class="guidance-bar">
+        <h4>
+          ⏰ <span style="color: #F8E16C">Step 2 - </span> Character Goals (15:00)  </h4>
+        </h4>
+      </div>
+      <p>What does your main character want? Can be the main goal of the story, could also be smaller personal/professional goals that could lead to sublots.</p>
+      
+    
+      <p> <em>A cop who doesn’t play by the rules <br> 
+        befriend(s) the creatures of the forest<br>
+      with a cunning elf, an obese ogre, and a belligerent dwarf</em></p>
+      
+        
+      
+      <textarea id="character" name="character" rows="40" cols="80">
+        
+      </textarea><br> <br><br>
+    
+      <button type="button" class="plot-gen-btn">🧠 On to Step 3! ⚡ 
+    
+      </button><br>
+
+        <!-- Step 3 Brainstorm -->
+        <div class="guidance-bar">
+          <h4>
+            ⏰ <span style="color: #F8E16C">Step 3 - </span> Character Fears (15:00)  </h4>
+          </h4>
+        </div>
+        <p>What is/are your main character’s worst fear(s)? How can they face their fear(s) organically within your story? </p>
+        
+      
+        <p> <em>A cop who doesn’t play by the rules <br> 
+          befriend(s) the creatures of the forest<br>
+        with a cunning elf, an obese ogre, and a belligerent dwarf</em></p>
+        
+          
+        
+        <textarea id="character" name="character" rows="40" cols="80">
+          
+        </textarea><br> <br><br>
+      
+        <button type="button" class="plot-gen-btn">🧠 On to Step 4! ⚡ 
+      
+        </button><br>
+
+         <!-- Step 4 Brainstorm -->
+         <div class="guidance-bar">
+          <h4>
+            ⏰ <span style="color: #F8E16C">Step 4 - </span> Character Relations (15:00)  </h4>
+          </h4>
+        </div>
+        <p>How does your main character relate to the people in their world? Not just the supporting characters but also those in the off-screen world – family, boss, neighbors, etc. </p>
+        
+      
+        <p> <em>A cop who doesn’t play by the rules <br> 
+          befriend(s) the creatures of the forest<br>
+        with a cunning elf, an obese ogre, and a belligerent dwarf</em></p>
+        
+          
+        
+        <textarea id="character" name="character" rows="40" cols="80">
+          
+        </textarea><br> <br><br>
+      
+        <button type="button" class="plot-gen-btn">🧠 On to Step 5! ⚡ 
+      
+        </button><br>
+
+         <!-- Step 5 Brainstorm -->
+         <div class="guidance-bar">
+          <h4>
+            ⏰ <span style="color: #F8E16C">Step 5 - </span> Character Conflicts (15:00)  </h4>
+          </h4>
+        </div>
+        <p>Think of all the conflicts that stop your main character from achieving their goals - both external and internal. </p>
+        
+      
+        <p> <em>A cop who doesn’t play by the rules <br> 
+          befriend(s) the creatures of the forest<br>
+        with a cunning elf, an obese ogre, and a belligerent dwarf</em></p>
+        
+          
+        
+        <textarea id="character" name="character" rows="40" cols="80">
+          
+        </textarea><br> <br><br>
+      
+        <button type="button" class="plot-gen-btn">🧠 On to Step 6! ⚡ 
+      
+        </button><br>
+
+        <!-- Step 6 Brainstorm -->
+        <div class="guidance-bar">
+          <h4>
+            ⏰ <span style="color: #F8E16C">Step 6 - </span> Conflict Scenarios (15:00)  </h4>
+          </h4>
+        </div>
+        <p>What potential conflicts will/may arise as the main character pursues their outer goal? If you’re 
+          writing a comedy, list all the funny scenarios you can come up with that they could run into trying 
+          to achieve their goal. If it’s a thriller or horror script, brainstorm all the terrifying things 
+          that could happen to them.  </p>
+        
+      
+        <p> <em>A cop who doesn’t play by the rules <br> 
+          befriend(s) the creatures of the forest<br>
+        with a cunning elf, an obese ogre, and a belligerent dwarf</em></p>
+        
+          
+        
+        <textarea id="character" name="character" rows="40" cols="80">
+          
+        </textarea><br> <br><br>
+      
+        <button type="button" class="plot-gen-btn">🧠 On to Step 7! ⚡ 
+      
+        </button><br>
+
+        <!-- Step 7 Brainstorm -->
+        <div class="guidance-bar">
+          <h4>
+            ⏰ <span style="color: #F8E16C">Step 7 - </span> Point of View (15:00)  </h4>
+           
+        </div>
+        
+        <p>Think about your main character’s point of view in terms of how they perceive the obstacles 
+          in front of them. Our biggest problems in life are not necessarily external, but are deep-rooted 
+          in our outlook. The minds of our characters are complicated. Try looking at every scene and 
+          challenging whether you’re coming at it from the right POV. As Robert McKee says, a character 
+          is defined by their behavior under pressure. Think up situations that would crank up the pressure 
+          and see what they do. In karate, if you’re trying to take someone down by pulling them in one 
+          direction, and it doesn’t work, stop wasting your energy. Instead, flip your perspective and 
+          yank them the opposite direction, and you’ll always get them flat on their back, with a lot 
+          less energy expended. The same is true in storytelling.
+            </p>
+        
+      
+        <p> <em>A cop who doesn’t play by the rules <br> 
+          befriend(s) the creatures of the forest<br>
+        with a cunning elf, an obese ogre, and a belligerent dwarf</em></p>
+        
+          
+        
+        <textarea id="character" name="character" rows="40" cols="80">
+          
+        </textarea><br> <br><br>
+      
+        <button type="button" class="plot-gen-btn">🧠 Complete Your Idea! ⚡ 
+      
+        </button><br>
+
+        <h1>💡 Your Idea 💡</h1>
+
+        <p>You did it, congratulations! 👏👏  <br><br>
+          📁 save as pdf
+        </p>
+
+        <div class="brainstorm-guide"> <span style="color: #F8E16C">| </span>Word Vomit   <span style="color: #F8E16C">| </span> Goals  
+          <span style="color: #F8E16C">  | </span> Fears  <span style="color: #F8E16C">| </span> Relations  <span style="color: #F8E16C">| </span> Conflicts  
+          <span style="color: #F8E16C">| </span> Scenarios  <span style="color: #F8E16C">| </span> POV <span style="color: #F8E16C">| </span>
+      </div>
+
+      <h4> <span style="color: #3772FF">A cop who doesn’t play by the rules </span> <br>
+        <span style="color: #FF3366">befriend(s) the creatures of the forest </span><br>
+        <span style="color: #2EC4B6">with a cunning elf, an obese ogre, and a belligerent dwarf </span></h4>
+      
+
+      <h4> Stream of Consciousness </h4>
+
+      <p>Long-forgotten homeless antique Fells curtain families. Ruling forfeit famous Angmar pathway heirloom needs brown? Shelob's voice release please! 
+        Spent everybody unprepared appreciation stands Azog hopeless. Consumed somebody pity's claim its prepared three-day they've Cair finally. Naked 
+        lots crooked thanks beginning Arwen's reaction. Afraid Proudfoots aye. You shall be the Fellowship of the Ring. Gondolin so won't crop. Pan s 
+        decide daughter shadow forced betrayed beat stretching Samwise.
+
+        Attacking mainly Arwen's hungry chiefest. Opportunity point Gentlemen greedy be clad board hours embrace? Prefers Andûril tread prince. Restless 
+        leaf Sméagol jabs vanquished. Mithril play including guarding swear crunchy. Hutch venerable heard charged fashioning Thorin smithy's courageous 
+        selling em fox favorite. Precisely heathen wring villain sadness sing therein Bracegirdles! Noose honorably Hornblowers. What about second breakfast?</p>
+        
+
+      <h4> Character Goals </h4>
+
+      <p>Long-forgotten homeless antique Fells curtain families. Ruling forfeit famous Angmar pathway heirloom needs brown? Shelob's voice release please! 
+        Spent everybody unprepared appreciation stands Azog hopeless. Consumed somebody pity's claim its prepared three-day they've Cair finally. Naked 
+        lots crooked thanks beginning Arwen's reaction. Afraid Proudfoots aye. You shall be the Fellowship of the Ring. Gondolin so won't crop. Pan s 
+        decide daughter shadow forced betrayed beat stretching Samwise.
+
+        Attacking mainly Arwen's hungry chiefest. Opportunity point Gentlemen greedy be clad board hours embrace? Prefers Andûril tread prince. Restless 
+        leaf Sméagol jabs vanquished. Mithril play including guarding swear crunchy. Hutch venerable heard charged fashioning Thorin smithy's courageous 
+        selling em fox favorite. Precisely heathen wring villain sadness sing therein Bracegirdles! Noose honorably Hornblowers. What about second breakfast?</p>
+        
+
+      <h4> Character Fears </h4>
+
+      <p>Long-forgotten homeless antique Fells curtain families. Ruling forfeit famous Angmar pathway heirloom needs brown? Shelob's voice release please! 
+        Spent everybody unprepared appreciation stands Azog hopeless. Consumed somebody pity's claim its prepared three-day they've Cair finally. Naked 
+        lots crooked thanks beginning Arwen's reaction. Afraid Proudfoots aye. You shall be the Fellowship of the Ring. Gondolin so won't crop. Pan s 
+        decide daughter shadow forced betrayed beat stretching Samwise.
+
+        Attacking mainly Arwen's hungry chiefest. Opportunity point Gentlemen greedy be clad board hours embrace? Prefers Andûril tread prince. Restless 
+        leaf Sméagol jabs vanquished. Mithril play including guarding swear crunchy. Hutch venerable heard charged fashioning Thorin smithy's courageous 
+        selling em fox favorite. Precisely heathen wring villain sadness sing therein Bracegirdles! Noose honorably Hornblowers. What about second breakfast?</p>
+        
+
+      <h4> Character Relations </h4>
+
+      <p>Long-forgotten homeless antique Fells curtain families. Ruling forfeit famous Angmar pathway heirloom needs brown? Shelob's voice release please! 
+        Spent everybody unprepared appreciation stands Azog hopeless. Consumed somebody pity's claim its prepared three-day they've Cair finally. Naked 
+        lots crooked thanks beginning Arwen's reaction. Afraid Proudfoots aye. You shall be the Fellowship of the Ring. Gondolin so won't crop. Pan s 
+        decide daughter shadow forced betrayed beat stretching Samwise.
+
+        Attacking mainly Arwen's hungry chiefest. Opportunity point Gentlemen greedy be clad board hours embrace? Prefers Andûril tread prince. Restless 
+        leaf Sméagol jabs vanquished. Mithril play including guarding swear crunchy. Hutch venerable heard charged fashioning Thorin smithy's courageous 
+        selling em fox favorite. Precisely heathen wring villain sadness sing therein Bracegirdles! Noose honorably Hornblowers. What about second breakfast?</p>
+        
+      <h4> Character Conflicts </h4>
+
+      <p>Long-forgotten homeless antique Fells curtain families. Ruling forfeit famous Angmar pathway heirloom needs brown? Shelob's voice release please! 
+        Spent everybody unprepared appreciation stands Azog hopeless. Consumed somebody pity's claim its prepared three-day they've Cair finally. Naked 
+        lots crooked thanks beginning Arwen's reaction. Afraid Proudfoots aye. You shall be the Fellowship of the Ring. Gondolin so won't crop. Pan s 
+        decide daughter shadow forced betrayed beat stretching Samwise.
+
+        Attacking mainly Arwen's hungry chiefest. Opportunity point Gentlemen greedy be clad board hours embrace? Prefers Andûril tread prince. Restless 
+        leaf Sméagol jabs vanquished. Mithril play including guarding swear crunchy. Hutch venerable heard charged fashioning Thorin smithy's courageous 
+        selling em fox favorite. Precisely heathen wring villain sadness sing therein Bracegirdles! Noose honorably Hornblowers. What about second breakfast?</p>
+
+      <h4> Conflict Scenarios </h4>
+
+      <p>Long-forgotten homeless antique Fells curtain families. Ruling forfeit famous Angmar pathway heirloom needs brown? Shelob's voice release please! 
+        Spent everybody unprepared appreciation stands Azog hopeless. Consumed somebody pity's claim its prepared three-day they've Cair finally. Naked 
+        lots crooked thanks beginning Arwen's reaction. Afraid Proudfoots aye. You shall be the Fellowship of the Ring. Gondolin so won't crop. Pan s 
+        decide daughter shadow forced betrayed beat stretching Samwise.
+
+        Attacking mainly Arwen's hungry chiefest. Opportunity point Gentlemen greedy be clad board hours embrace? Prefers Andûril tread prince. Restless 
+        leaf Sméagol jabs vanquished. Mithril play including guarding swear crunchy. Hutch venerable heard charged fashioning Thorin smithy's courageous 
+        selling em fox favorite. Precisely heathen wring villain sadness sing therein Bracegirdles! Noose honorably Hornblowers. What about second breakfast?</p>
+
+
+      <h4> Point of View </h4>
+
+      <p>Long-forgotten homeless antique Fells curtain families. Ruling forfeit famous Angmar pathway heirloom needs brown? Shelob's voice release please! 
+        Spent everybody unprepared appreciation stands Azog hopeless. Consumed somebody pity's claim its prepared three-day they've Cair finally. Naked 
+        lots crooked thanks beginning Arwen's reaction. Afraid Proudfoots aye. You shall be the Fellowship of the Ring. Gondolin so won't crop. Pan s 
+        decide daughter shadow forced betrayed beat stretching Samwise.
+
+        Attacking mainly Arwen's hungry chiefest. Opportunity point Gentlemen greedy be clad board hours embrace? Prefers Andûril tread prince. Restless 
+        leaf Sméagol jabs vanquished. Mithril play including guarding swear crunchy. Hutch venerable heard charged fashioning Thorin smithy's courageous 
+        selling em fox favorite. Precisely heathen wring villain sadness sing therein Bracegirdles! Noose honorably Hornblowers. What about second breakfast?</p>
+
+        <h1>📚 Resources 📚</h1>
+        <p>This tool was created with heavy inspiration and large portions of text taken from the Movie Plot Generator book (2004, Brothers Heimberg Press), 
+          as well as the March 25, 2014 Script Magazine article, “Jeanne's Screenwriting Tip: 7 Brainstorming Techniques,” written by Jeanne Veillette Bowerman. 
+          In addition to these resources, elements in the Idea Generator have also been pulled from the following sites. I recommend checking into these resources 
+          as well in your own writing journey.<p>
+
+            <p>Wild Sound Festival<br> 
+          http://www.wildsoundfestival.com/</p>
+          
+         <p> Blood List<br>
+          http://www.bloodlist.com</p>
+          
+         <p> Killer Shorts Context<br>
+          http://www.killershortsfestival.com</p>
+          
+          <p>Fantasy/Sci-Fi Film and Writing Festival<br>
+          http://www.fantasyscififestival.com</p>
+          
+           <p>Screenwriting Staff<br>
+          http://www.screenwritingstaffing.com</p>
+          
+          <p> Screencraft<br>
+          http://www.screencraft.org</p>
+          
+           <p>Film Daily<br>
+          http://www.filmdaily.tv</p>
+          
+      
+
+
+
+  
+   
+ 
 </body>
 </html>
+
