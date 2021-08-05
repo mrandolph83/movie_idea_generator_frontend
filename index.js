@@ -3,9 +3,16 @@
 const endPoint = "http://127.0.0.1:3000/api/v1/ideas";
 
 document.addEventListener('DOMContentLoaded', () => {
-  // global scope array, contains every original idea content
-  ideaArray = [] 
-  sessionArray = []
+  // global scope arrays
+ideaArray = [] 
+actionArray = []
+comedyArray = []
+dramaArray = []
+familyArray = []
+horrorArray = []
+sciFiFantasyArray = []
+sessionArray = []
+
   
   getIdeas()
 
@@ -14,22 +21,90 @@ document.addEventListener('DOMContentLoaded', () => {
    userBrainstormerForm.addEventListener("submit", (e) => 
    createFormHandler(e))
 
-   const genreSelectionAction = document.querySelector("#genre-selection-action")
-   genreSelectionAction.addEventListener("change", function(e){
-     if(genreSelectionAction.checked){
-       console.log("Action is checked")
-     } 
-      else {
-       console.log("Noo action for you")
-     }
-   })
-   
+  //  Start of Plot Generator Genre Entry
+      const genreSelectionAction = document.querySelector("#genre-selection-action")
+      genreSelectionAction.addEventListener("change", function(e){
+        if(genreSelectionAction.checked){
+            actionArray.forEach(actionIdea => {
+              sessionArray.push(actionIdea);  
+            })} 
+            else {
+              for( var i = 0; i < sessionArray.length; i++){ 
+                if (sessionArray[i].genre_id === 1) { 
+                    sessionArray.splice(i, 1); 
+                    i--;}}}
+       }) 
+  
+      const genreSelectionComedy = document.querySelector("#genre-selection-comedy")
+      genreSelectionComedy.addEventListener("change", function(e){
+        if(genreSelectionComedy.checked){
+          comedyArray.forEach(comedyIdea => {
+            sessionArray.push(comedyIdea);  
+          })} 
+          else {
+            for( var i = 0; i < sessionArray.length; i++){ 
+              if (sessionArray[i].genre_id === 2) { 
+                  sessionArray.splice(i, 1); 
+                  i--;}}}
+        }) 
 
+      const genreSelectionDrama = document.querySelector("#genre-selection-drama")
+      genreSelectionDrama.addEventListener("change", function(e){
+        if(genreSelectionDrama.checked){
+          dramaArray.forEach(dramaIdea => {
+            sessionArray.push(dramaIdea);  
+          })} 
+          else {
+            for( var i = 0; i < sessionArray.length; i++){ 
+              if (sessionArray[i].genre_id === 3) { 
+                  sessionArray.splice(i, 1); 
+                  i--;}}}
+        }) 
 
+      const genreSelectionFamily = document.querySelector("#genre-selection-family")
+      genreSelectionFamily.addEventListener("change", function(e){
+        if(genreSelectionFamily.checked){
+          familyArray.forEach(familyIdea => {
+            sessionArray.push(familyIdea);  
+          })} 
+          else {
+            for( var i = 0; i < sessionArray.length; i++){ 
+              if (sessionArray[i].genre_id === 4) { 
+                  sessionArray.splice(i, 1); 
+                  i--;}}}
+        }) 
 
-
-   
+        const genreSelectionHorror = document.querySelector("#genre-selection-horror")
+        genreSelectionHorror.addEventListener("change", function(e){
+          if(genreSelectionHorror.checked){
+            horrorArray.forEach(horrorIdea => {
+              sessionArray.push(horrorIdea);  
+            })} 
+            else {
+              for( var i = 0; i < sessionArray.length; i++){ 
+                if (sessionArray[i].genre_id === 5) { 
+                    sessionArray.splice(i, 1); 
+                    i--;}}}
+          }) 
+        
+        const genreSelectionSciFi = document.querySelector("#genre-selection-sci-fi")
+        genreSelectionSciFi.addEventListener("change", function(e){
+          if(genreSelectionSciFi.checked){
+            sciFiFantasyArray.forEach(sciFiIdea => {
+              sessionArray.push(sciFiIdea);  
+            })} 
+            else {
+              for( var i = 0; i < sessionArray.length; i++){ 
+                if (sessionArray[i].genre_id === 6) { 
+                    sessionArray.splice(i, 1); 
+                    i--;}}}
+          }) 
+// end of Plot Generator Genre Entry
 })
+
+
+
+
 
 
 
@@ -40,15 +115,32 @@ document.addEventListener('DOMContentLoaded', () => {
      .then(ideas => {
       //  debugger
       ideas.data.forEach(idea => {
-        // debugger
+        
         let newIdea = new Idea(idea, idea.attributes);
         ideaArray.push(newIdea);
 
+        ideaSorter(newIdea)
 
-        
-        // document.querySelector("#idea-container").innerHTML +=  newIdea.renderMovieIdea()
-        
-        // render(idea)
+        function ideaSorter(newIdea) {
+          if (newIdea.genre_id === 1) {
+            actionArray.push(newIdea)
+          }
+          else if (newIdea.genre_id === 2) {
+            comedyArray.push(newIdea)
+            }
+          else if (newIdea.genre_id === 3) {
+            dramaArray.push(newIdea)
+            }
+          else if (newIdea.genre_id === 4) {
+            familyArray.push(newIdea)
+            }
+          else if (newIdea.genre_id === 5) {
+            horrorArray.push(newIdea)
+            }
+          else if (newIdea.genre_id === 6) {
+            sciFiFantasyArray.push(newIdea)
+            }
+        }
        })
      })
  }
@@ -61,14 +153,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const characterInput = document.querySelector("#character").value
   const setupInput = document.querySelector("#setup").value
   const twistInput = document.querySelector("#twist").value
-  postIdea(characterInput, setupInput, twistInput)
+  const genreInput = document.querySelector("#genre_id").value
+  postIdea(characterInput, setupInput, twistInput, genreInput)
   }
 
- function postIdea(character, setup, twist) {
+ function postIdea(character, setup, twist, genre_id) {
   // confirm these values are coming through properly
   document.querySelector("#character-selection").innerHTML = character;
   document.querySelector("#setup-selection").innerHTML = setup;
   document.querySelector("#twist-selection").innerHTML = twist;
+  document.querySelector("#genre-selection").innerHTML = genre_id;
 
   // build body object
 
@@ -80,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
       character: character,
       setup: setup,
       twist: twist,
-      genre_id: 3
+      genre_id: genre_id
     })
   })
   .then(response => response.json())

@@ -6,7 +6,7 @@ class Idea {
     this.character = ideaAttributes.character
     this.setup = ideaAttributes.setup
     this.twist = ideaAttributes.twist
-    this.genre_id = 3
+    this.genre_id = ideaAttributes.genre_id
     Idea.all.push(this)
     
   }
