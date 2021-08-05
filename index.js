@@ -21,6 +21,10 @@ sessionArray = []
    userBrainstormerForm.addEventListener("submit", (e) => 
    createFormHandler(e))
 
+   const plotGenerator = document.querySelector("#plot-gen-btn")
+   plotGenerator.addEventListener("click", (e) => 
+   plotGenerate(e))
+
   //  Start of Plot Generator Genre Entry
       const genreSelectionAction = document.querySelector("#genre-selection-action")
       genreSelectionAction.addEventListener("change", function(e){
@@ -102,12 +106,6 @@ sessionArray = []
 // end of Plot Generator Genre Entry
 })
 
-
-
-
-
-
-
 // Fetch/get data from API
  function getIdeas() {
    fetch(endPoint)
@@ -145,6 +143,11 @@ sessionArray = []
      })
  }
 
+
+// Plot Generator function
+function plotGenerate(e) {
+  console.log("Generate!")
+}
 
 //  Brainstormer form, making variables/values upon "submit"
   function createFormHandler(e) {
