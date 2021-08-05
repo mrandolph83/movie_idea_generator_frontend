@@ -1,11 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  
-
-
-
-
 
 
 <html lang="en">
@@ -24,8 +17,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap" rel="stylesheet">
   
-  <!-- Javascript file -->
+  <!-- Javascript files -->
   <script src="index.js" charset="utf-8"></script>  
+  <script src="idea.js" charset="utf-8"></script> 
 
 </head>
 
@@ -59,7 +53,7 @@
     shuffle 🔀 through each element individually. At any point, feel free to move on to the Brainstormer to begin sketching out your idea!
    </p>
    <p>GENRE(S): 
-    <input type="checkbox" id="Action" name="Action" value="Action">
+    <input type="checkbox" id="genre-selection-action" name="Action" value="Action">
     <label for="Action"> Action</label>
     <input type="checkbox" id="Comedy" name="Comedy" value="Comedy">
     <label for="Comedy"> Comedy</label>
@@ -102,22 +96,22 @@
 
     </button><br>
 
-  <div class="guidance-bar">
+  <!-- <div class="guidance-bar">
   
   <h4> <span style="color: #3772FF">A cop who doesn’t play by the rules </span> <br>
     <span style="color: #FF3366">befriend(s) the creatures of the forest </span><br>
     <span style="color: #2EC4B6">with a cunning elf, an obese ogre, and a belligerent dwarf </span></h4>
-    </div>
+    </div> -->
 
-    <h4 class="brainstorm-name">
-      <h4>Customize Your Pitch</h4>
+    
+      <h3>Customize Your Pitch</h3>
 
 <!-- Brainstormer User Edit Form  -->
       <form id="brainstormer-user-edit">
 
     <span style="color: #3772FF">
       <label for="character">Character</label><br>
-     <textarea id="character" name="character" rows="3" cols="80">
+     <textarea id="character" name="character" value="" >
         
       </textarea><br><br>
     </span>
@@ -125,7 +119,7 @@
     <span style="color: #FF3366">
       <label for="setup">Setup</label><br>
 
-      <textarea id="setup" name="setup" rows="3" cols="80">
+      <textarea id="setup" name="setup" value="" >
         
       </textarea><br><br>
     </span>
@@ -133,14 +127,42 @@
     <span style="color: #2EC4B6">
       <label for="twist">Twist</label><br>
 
-      <textarea id="twist" name="twist" rows="3" cols="80">
+      <textarea id="twist" name="twist" value="" >
         
-      </textarea><br><br><br>
+      </textarea><br>
     </span>
     </h4>
 
-    <button type="submit" class="customize-btn"> Update </button><br><br>
+    <h4>
+    <input id="action-id" name="genre-selection-action" type="radio" value=1>
+    <label for="Action">Action</label>  
+
+    <input id="genre_id" name="genre_id" type="radio" value=2>
+    <label for="Comedy">Comedy</label>   
+
+    <input id="genre_id" name="genre_id" type="radio" value=3>
+    <label for="Drama">Drama</label>   
+
+    <input id="genre_id" name="genre_id" type="radio" value=4>
+    <label for="Family">Family</label>  
+
+    <input id="genre_id" name="genre_id" type="radio" value=5>
+    <label for="Horror">Horror</label>   
+
+    <input id="genre_id" name="genre_id" type="radio" value=6>
+    <label for="Sci-Fi/Fantasy">Sci-Fi/Fantasy</label>   
+
+    </h4>
+
+    <input id= 'create-button' type="submit" name="submit" value="Update Pitch" class="submit">
   </form>
+
+
+
+
+
+
+
 
 
     <!-- Step 1 Brainstorm -->
@@ -152,9 +174,9 @@
   <p>No filter, no judgment; write out everything that comes into your head.</p>
   
 
-  <p> <em>A cop who doesn’t play by the rules <br> 
-    befriend(s) the creatures of the forest<br>
-  with a cunning elf, an obese ogre, and a belligerent dwarf</em></p>
+  <h3 id="character-selection"> </h3> 
+  <h3 id="setup-selection"> </h3> 
+  <h3 id="twist-selection"> </h3> 
   
     
   

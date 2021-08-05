@@ -1,77 +1,97 @@
 
 
-const endPoint = "http://127.0.0.1:3000/api/v1/ideas"
-document.addEventListener('DOMContentLoaded', () => {
-   
-   getIdeas()
+const endPoint = "http://127.0.0.1:3000/api/v1/ideas";
 
-   // E.L. for user inputting data into Brainstormer form
+document.addEventListener('DOMContentLoaded', () => {
+  // global scope array, contains every original idea content
+  ideaArray = [] 
+  sessionArray = []
+  
+  getIdeas()
+
+  //  E.L. for user inputting data into Brainstormer form
    const userBrainstormerForm = document.querySelector("#brainstormer-user-edit")
    userBrainstormerForm.addEventListener("submit", (e) => 
    createFormHandler(e))
+
+   const genreSelectionAction = document.querySelector("#genre-selection-action")
+   genreSelectionAction.addEventListener("change", function(e){
+     if(genreSelectionAction.checked){
+       console.log("Action is checked")
+     } 
+      else {
+       console.log("Noo action for you")
+     }
+   })
+   
+
+
+
+
+   
 })
+
+
 
 // Fetch/get data from API
  function getIdeas() {
    fetch(endPoint)
-     .then(res => res.json())
+     .then(response => response.json())
      .then(ideas => {
       //  debugger
       ideas.data.forEach(idea => {
-         const ideaMarkup = `
-           <div data-id=${idea.id}>
-             <h3>${idea.attributes.character}</h3>
-             <h3>${idea.attributes.setup}</h3>
-             <h3>${idea.attributes.twist}</h3>
-           </div>
-           <br><br>`;
- 
-           document.querySelector('#idea-container').innerHTML += ideaMarkup
+        // debugger
+        let newIdea = new Idea(idea, idea.attributes);
+        ideaArray.push(newIdea);
+
+
+        
+        // document.querySelector("#idea-container").innerHTML +=  newIdea.renderMovieIdea()
+        
+        // render(idea)
        })
      })
  }
 
+
 //  Brainstormer form, making variables/values upon "submit"
- function createFormHandler(e) {
-    e.preventDefault()
-   //  Do I want these in the global scope? try innerHTML within 
-   // this function
-    const characterInput = document.querySelector("#character").value
-    const setupInput = document.querySelector("#setup").value
-    const twistInput = document.querySelector("#twist").value
-   postIdea(characterInput, setupInput, twistInput)
-   }
+  function createFormHandler(e) {
+  e.preventDefault()
+//  Add innerHTML apending to Brainstormer in this section
+  const characterInput = document.querySelector("#character").value
+  const setupInput = document.querySelector("#setup").value
+  const twistInput = document.querySelector("#twist").value
+  postIdea(characterInput, setupInput, twistInput)
+  }
 
+ function postIdea(character, setup, twist) {
+  // confirm these values are coming through properly
+  document.querySelector("#character-selection").innerHTML = character;
+  document.querySelector("#setup-selection").innerHTML = setup;
+  document.querySelector("#twist-selection").innerHTML = twist;
 
-    // Sending Post request to your API (backend create route)
-    function postIdea(character, setup, twist) {
-      // confirm these values are coming through properly
-      console.log(character, setup, twist);
-      // build body object
-      let bodyData = {character, setup, twist}
+  // build body object
+
+  fetch(endPoint, {
+    // POST request
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({
+      character: character,
+      setup: setup,
+      twist: twist,
+      genre_id: 3
+    })
+  })
+  .then(response => response.json())
+  .then(idea => {
+   
+    console.log(idea);
+    const ideaData = idea.data
+    // render JSON response
+    let newIdea = new Idea(ideaData, ideaData.attributes)
     
-      fetch(endPoint, {
-        // POST request
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify(bodyData)
-      })
-      
-      .then(response => response.json())
-      .then(idea => {
-        console.log(idea);
-        debugger
-        // const ideaData = idea.data
-        // // render JSON response
-        // const ideaMarkup = `
-        // <div data-id=${idea.id}>
-        //   <img src=${ideaData.attributes.image_url} height="200" width="250">
-        //   <h3>${ideaData.attributes.title}</h3>
-        //   <p>${ideaData.attributes.category.name}</p>
-        //   <button data-id=${ideaData.id}>edit</button>
-        // </div>
-        // <br><br>`;
-    
-        document.querySelector('#idea-container').innerHTML += ideaMarkup;
-      })
-    }
+    document.querySelector("#idea-container").innerHTML +=  newIdea.renderMovieIdea()
+  })
+}
+
