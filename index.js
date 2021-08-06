@@ -120,6 +120,7 @@ sessionArray = []
         ideaSorter(newIdea)
 
         function ideaSorter(newIdea) {
+          if (newIdea.generator_default === true){
           if (newIdea.genre_id === 1) {
             actionArray.push(newIdea)
           }
@@ -137,7 +138,7 @@ sessionArray = []
             }
           else if (newIdea.genre_id === 6) {
             sciFiFantasyArray.push(newIdea)
-            }
+            }}
         }
        })
      })
@@ -146,7 +147,49 @@ sessionArray = []
 
 // Plot Generator function
 function plotGenerate(e) {
-  console.log("Generate!")
+  characterGenerate ()
+  setupGenerate ()
+  twistGenerate ()
+
+ 
+
+  function characterGenerate (){
+    let characterInterval = setInterval(characterSelections, 200)
+      function characterSelections () {
+     console.log("Character")}
+
+     setTimeout(stopCharacter, 2500)
+
+     function stopCharacter() {
+       clearInterval(characterInterval)
+     }
+  }
+
+  function setupGenerate (){
+    let setupInterval = setInterval(setupSelections, 200)
+      function setupSelections () {
+     console.log("Setup")}
+
+     setTimeout(stopSetup, 3000)
+
+     function stopSetup() {
+       clearInterval(setupInterval)
+     }
+  }
+
+  function twistGenerate (){
+    let twistInterval = setInterval(twistSelections, 200)
+      function twistSelections () {
+     console.log("Twist")}
+
+     setTimeout(stopTwist, 3500)
+
+     function stopTwist() {
+       clearInterval(twistInterval)
+     }
+  }
+   
+
 }
 
 //  Brainstormer form, making variables/values upon "submit"
@@ -177,7 +220,8 @@ function plotGenerate(e) {
       character: character,
       setup: setup,
       twist: twist,
-      genre_id: genre_id
+      genre_id: genre_id,
+      generator_default: false
     })
   })
   .then(response => response.json())
