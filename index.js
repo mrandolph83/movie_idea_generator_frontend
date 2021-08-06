@@ -155,8 +155,13 @@ function plotGenerate(e) {
 
   function characterGenerate (){
     let characterInterval = setInterval(characterSelections, 200)
+    
+
       function characterSelections () {
-     console.log("Character")}
+        let endInt = sessionArray.length
+        let i = Math.floor(Math.random() * endInt)
+        document.querySelector("#character-gen").innerHTML = sessionArray[i].character;
+      }
 
      setTimeout(stopCharacter, 2500)
 
@@ -168,7 +173,10 @@ function plotGenerate(e) {
   function setupGenerate (){
     let setupInterval = setInterval(setupSelections, 200)
       function setupSelections () {
-     console.log("Setup")}
+        let endInt = sessionArray.length
+        let i = Math.floor(Math.random() * endInt)
+        document.querySelector("#setup-gen").innerHTML = sessionArray[i].setup;
+      }
 
      setTimeout(stopSetup, 3000)
 
@@ -180,7 +188,9 @@ function plotGenerate(e) {
   function twistGenerate (){
     let twistInterval = setInterval(twistSelections, 200)
       function twistSelections () {
-     console.log("Twist")}
+        let endInt = sessionArray.length
+        let i = Math.floor(Math.random() * endInt)
+        document.querySelector("#twist-gen").innerHTML = sessionArray[i].twist;}
 
      setTimeout(stopTwist, 3500)
 
@@ -188,8 +198,6 @@ function plotGenerate(e) {
        clearInterval(twistInterval)
      }
   }
-   
-
 }
 
 //  Brainstormer form, making variables/values upon "submit"
