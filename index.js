@@ -16,14 +16,29 @@ sessionArray = []
   
   getIdeas()
 
-  //  E.L. for user inputting data into Brainstormer form
+  //  E.L. for user inputting data into Brainstormer form (Below)
    const userBrainstormerForm = document.querySelector("#brainstormer-user-edit")
    userBrainstormerForm.addEventListener("submit", (e) => 
    createFormHandler(e))
 
+  //  E.L call for plot generator
    const plotGenerator = document.querySelector("#plot-gen-btn")
    plotGenerator.addEventListener("click", (e) => 
    plotGenerate(e))
+
+  // E.L Call for Shufle Buttons
+   let shuffleCharacter = document.getElementById('character-shuffle-btn')
+  shuffleCharacter.addEventListener("click", (e) => 
+  shuffleChar(e))
+
+  let shuffleSetup = document.getElementById('setup-shuffle-btn')
+  shuffleSetup.addEventListener("click", (e) => 
+  shuffleSet(e))
+
+  let shuffleTwist = document.getElementById('twist-shuffle-btn')
+  shuffleTwist.addEventListener("click", (e) => 
+  shuffleTwi(e))
+
 
   //  Start of Plot Generator Genre Entry
       const genreSelectionAction = document.querySelector("#genre-selection-action")
@@ -106,6 +121,7 @@ sessionArray = []
 // end of Plot Generator Genre Entry
 })
 
+
 // Fetch/get data from API
  function getIdeas() {
    fetch(endPoint)
@@ -155,6 +171,9 @@ function plotGenerate(e) {
 
   function characterGenerate (){
     let characterInterval = setInterval(characterSelections, 200)
+
+    var audio = new Audio('sounds/PlotGen_SFX_v4.wav');
+    audio.play();
     
 
       function characterSelections () {
@@ -199,6 +218,37 @@ function plotGenerate(e) {
      }
   }
 }
+
+
+// Event Listeners for PlotGen Shuffle
+
+
+
+function shuffleChar(e) {
+
+    let endInt = sessionArray.length
+    let i = Math.floor(Math.random() * endInt)
+    document.querySelector("#character-gen").innerHTML = sessionArray[i].character;
+  }
+
+function shuffleSet(e) {
+
+  let endInt = sessionArray.length
+  let i = Math.floor(Math.random() * endInt)
+  document.querySelector("#setup-gen").innerHTML = sessionArray[i].setup;
+  }
+
+function shuffleTwi(e) {
+
+  let endInt = sessionArray.length
+  let i = Math.floor(Math.random() * endInt)
+  document.querySelector("#twist-gen").innerHTML = sessionArray[i].twist;
+  }
+
+
+  
+
+
 
 //  Brainstormer form, making variables/values upon "submit"
   function createFormHandler(e) {
