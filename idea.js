@@ -16,11 +16,10 @@ class Idea {
      
     return`
     <div data-id=${this.id}>
-      <h3>${this.character}</h3>
-      <h3>${this.setup}</h3>
-      <h3>${this.twist}</h3>
-    </div>
-    <br><br>`;
+      <span style="color: #3772FF"><h4>${this.character}</h4></span>
+      <span style="color: #FF3366"><h4>${this.setup}</h4></span>
+      <span style="color: #2EC4B6"><h4>${this.twist}</h4></span>
+    </div>`;
   
    }
 

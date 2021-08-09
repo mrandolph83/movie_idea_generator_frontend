@@ -97,15 +97,7 @@
 
   <h1>🤔 The Brainstormer 🤔</h1>
   
-  <p>The below exercises are based on this fabulous article in Script magazine by Jeanne Veillette Bowerman. If you like this tool, I highly recommend 
-    reading the article and/or looking into Script magazine. These seven 15-minute exercises are designed to take your pitch to a fully-formed idea.
-     Once you are finished, check the bottom of the page, where you can see everything you have written and save a copy for yourself.
- Follow these prompts at your own pace, use the built-in timer if you wish, and good luck!
-    </p>
-
-    <button type="button" class="plot-gen-btn">🧠 Begin Brainstorm! ⚡ 
-
-    </button><br>
+ 
 
   <!-- <div class="guidance-bar">
   
@@ -165,18 +157,25 @@
 
     </h4>
 
-    <a href="#brain1-top"></a><input id= 'create-button' type="submit" name="submit" value="Update Pitch" class="submit"></a></form>
+    <p>The below exercises are based on this fabulous article in Script magazine by Jeanne Veillette Bowerman. If you like this tool, I highly recommend 
+      reading the article and/or looking into Script magazine. These seven 15-minute exercises are designed to take your pitch to a fully-formed idea.
+       Once you are finished, check the bottom of the page, where you can see everything you have written and save a copy for yourself.
+   Follow these prompts at your own pace, use the built-in timer if you wish, and good luck!
+      </p>
+  
+      <!-- <button type="button" class="plot-gen-btn" id= 'create-button'>
+  
+      </button><br> -->
+
+    <input id= 'create-button' type="submit" name="submit" value="🧠 Begin Brainstorm! ⚡ " class="sub-btn"></a></form>
   </form>
-  <h3 id="character-selection"> </h3> 
-  <h3 id="setup-selection"> </h3> 
-  <h3 id="twist-selection"> </h3> 
-  <h3 id="genre-selection"> </h3> 
 
 
 
 
 
 
+  
 
 
     <!-- Step 1 Brainstorm -->
@@ -186,11 +185,20 @@
       ⏰ <span style="color: #F8E16C">Step 1 - </span> Stream of Consciousness (15:00)  </h4>
     </h4>
   </div>
+
+  <div class="timer" id="time-left-display-1"></div>
+  <button id="timer-start-1">⏰ Start Timer</button>
+ 
+
+  <div id="user-idea-selection"></div>
+
+  
   <div id="brain-1">
 
 </div>
-<h3>Time Left: <span id="time-left-display-1">15:00</span></h3>
-<button id="timer-start-1">Start</button>
+
+<input id= 'plot-gen-btn-2' type="submit" name="submit" value="🧠 On to Step 2! ⚡" class="sub-btn">
+
 
 
       <!-- Step 2 Brainstorm -->
@@ -199,45 +207,31 @@
           ⏰ <span style="color: #F8E16C">Step 2 - </span> Character Goals (15:00)  </h4>
         </h4>
       </div>
-      <p>What does your main character want? Can be the main goal of the story, could also be smaller personal/professional goals that could lead to sublots.</p>
-      
-    
-      <p> <em>A cop who doesn’t play by the rules <br> 
-        befriend(s) the creatures of the forest<br>
-      with a cunning elf, an obese ogre, and a belligerent dwarf</em></p>
-      
-        
-      
-      <textarea id="character" name="character" rows="40" cols="80">
-        
-      </textarea><br> <br><br>
-    
-      <button type="button" class="plot-gen-btn">🧠 On to Step 3! ⚡ 
-    
-      </button><br>
 
+      <div class="timer" id="time-left-display-2"></div>
+      <button id="timer-start-2">⏰ Start Timer</button>
+
+      <div id="user-idea-selection-2"></div>
+      <div id="brainstorm-level-2"></div>
+
+      <input id= 'plot-gen-btn-3' type="submit" name="submit" value="🧠 On to Step 3! ⚡" class="sub-btn">
+
+
+  
+      
         <!-- Step 3 Brainstorm -->
         <div class="guidance-bar">
           <h4>
             ⏰ <span style="color: #F8E16C">Step 3 - </span> Character Fears (15:00)  </h4>
           </h4>
         </div>
-        <p>What is/are your main character’s worst fear(s)? How can they face their fear(s) organically within your story? </p>
-        
+
+        <div class="timer" id="time-left-display-3"></div>
+        <button id="timer-start-3">⏰ Start Timer</button>
       
-        <p> <em>A cop who doesn’t play by the rules <br> 
-          befriend(s) the creatures of the forest<br>
-        with a cunning elf, an obese ogre, and a belligerent dwarf</em></p>
-        
-          
-        
-        <textarea id="character" name="character" rows="40" cols="80">
-          
-        </textarea><br> <br><br>
+        <div id="brainstorm-level-3"></div>
       
-        <button type="button" class="plot-gen-btn">🧠 On to Step 4! ⚡ 
-      
-        </button><br>
+        <input id= 'plot-gen-btn-4' type="submit" name="submit" value="🧠 On to Step 4! ⚡" class="sub-btn">
 
          <!-- Step 4 Brainstorm -->
          <div class="guidance-bar">
@@ -245,22 +239,13 @@
             ⏰ <span style="color: #F8E16C">Step 4 - </span> Character Relations (15:00)  </h4>
           </h4>
         </div>
-        <p>How does your main character relate to the people in their world? Not just the supporting characters but also those in the off-screen world – family, boss, neighbors, etc. </p>
-        
+
+        <div class="timer" id="time-left-display-4"></div>
+        <button id="timer-start-4">⏰ Start Timer</button>
+
+        <div id="brainstorm-level-4"></div>
       
-        <p> <em>A cop who doesn’t play by the rules <br> 
-          befriend(s) the creatures of the forest<br>
-        with a cunning elf, an obese ogre, and a belligerent dwarf</em></p>
-        
-          
-        
-        <textarea id="character" name="character" rows="40" cols="80">
-          
-        </textarea><br> <br><br>
-      
-        <button type="button" class="plot-gen-btn">🧠 On to Step 5! ⚡ 
-      
-        </button><br>
+        <input id= 'plot-gen-btn-5' type="submit" name="submit" value="🧠 On to Step 5! ⚡" class="sub-btn">
 
          <!-- Step 5 Brainstorm -->
          <div class="guidance-bar">
@@ -268,22 +253,13 @@
             ⏰ <span style="color: #F8E16C">Step 5 - </span> Character Conflicts (15:00)  </h4>
           </h4>
         </div>
-        <p>Think of all the conflicts that stop your main character from achieving their goals - both external and internal. </p>
-        
+        <div class="timer" id="time-left-display-5"></div>
+        <button id="timer-start-5">⏰ Start Timer</button>
+
+
+        <div id="brainstorm-level-5"></div>
       
-        <p> <em>A cop who doesn’t play by the rules <br> 
-          befriend(s) the creatures of the forest<br>
-        with a cunning elf, an obese ogre, and a belligerent dwarf</em></p>
-        
-          
-        
-        <textarea id="character" name="character" rows="40" cols="80">
-          
-        </textarea><br> <br><br>
-      
-        <button type="button" class="plot-gen-btn">🧠 On to Step 6! ⚡ 
-      
-        </button><br>
+        <input id= 'plot-gen-btn-6' type="submit" name="submit" value="🧠 On to Step 6! ⚡" class="sub-btn">
 
         <!-- Step 6 Brainstorm -->
         <div class="guidance-bar">
@@ -291,25 +267,14 @@
             ⏰ <span style="color: #F8E16C">Step 6 - </span> Conflict Scenarios (15:00)  </h4>
           </h4>
         </div>
-        <p>What potential conflicts will/may arise as the main character pursues their outer goal? If you’re 
-          writing a comedy, list all the funny scenarios you can come up with that they could run into trying 
-          to achieve their goal. If it’s a thriller or horror script, brainstorm all the terrifying things 
-          that could happen to them.  </p>
+
+        <div class="timer" id="time-left-display-6"></div>
+        <button id="timer-start-6">⏰ Start Timer</button>
+
+        <div id="brainstorm-level-6"></div>
+        <input id= 'plot-gen-btn-7' type="submit" name="submit" value="🧠 On to Step 7! ⚡" class="sub-btn">
+
         
-      
-        <p> <em>A cop who doesn’t play by the rules <br> 
-          befriend(s) the creatures of the forest<br>
-        with a cunning elf, an obese ogre, and a belligerent dwarf</em></p>
-        
-          
-        
-        <textarea id="character" name="character" rows="40" cols="80">
-          
-        </textarea><br> <br><br>
-      
-        <button type="button" class="plot-gen-btn">🧠 On to Step 7! ⚡ 
-      
-        </button><br>
 
         <!-- Step 7 Brainstorm -->
         <div class="guidance-bar">
@@ -317,32 +282,12 @@
             ⏰ <span style="color: #F8E16C">Step 7 - </span> Point of View (15:00)  </h4>
            
         </div>
-        
-        <p>Think about your main character’s point of view in terms of how they perceive the obstacles 
-          in front of them. Our biggest problems in life are not necessarily external, but are deep-rooted 
-          in our outlook. The minds of our characters are complicated. Try looking at every scene and 
-          challenging whether you’re coming at it from the right POV. As Robert McKee says, a character 
-          is defined by their behavior under pressure. Think up situations that would crank up the pressure 
-          and see what they do. In karate, if you’re trying to take someone down by pulling them in one 
-          direction, and it doesn’t work, stop wasting your energy. Instead, flip your perspective and 
-          yank them the opposite direction, and you’ll always get them flat on their back, with a lot 
-          less energy expended. The same is true in storytelling.
-            </p>
+        <div class="timer" id="time-left-display-7"></div>
+        <button id="timer-start-7">⏰ Start Timer</button>
         
       
-        <p> <em>A cop who doesn’t play by the rules <br> 
-          befriend(s) the creatures of the forest<br>
-        with a cunning elf, an obese ogre, and a belligerent dwarf</em></p>
-        
-          
-        
-        <textarea id="character" name="character" rows="40" cols="80">
-          
-        </textarea><br> <br><br>
-      
-        <button type="button" class="plot-gen-btn">🧠 Complete Your Idea! ⚡ 
-      
-        </button><br>
+        <div id="brainstorm-level-7"></div>
+        <input id= 'plot-gen-btn-8' type="submit" name="submit" value="🏁The Finish Line! 🏁" class="sub-btn">
 
         <h1>💡 Your Idea 💡</h1>
 
