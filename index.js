@@ -42,7 +42,9 @@ sessionArray = []
 
     
   
-    const startButton1 = document.querySelector("#timer-start-1")
+    let startButton1 = document.querySelector("#timer-start-1")
+    startButton1.addEventListener("click", (e) => 
+    timer1(e))
  
   
   
@@ -264,7 +266,9 @@ document.querySelector("#twist-gen").innerHTML = sessionArray[i].twist;
 }
 
 // Timer function
+function timer1 () {
 
+  
 const startingMinutes = 15;
 let time = startingMinutes * 60;
 setInterval(updateCountdown, 1000);
@@ -283,6 +287,9 @@ countdownEl.innerHTML = `${minutes}:${seconds}`;
 
 time --;
 
+}
+var audio = new Audio('sounds/ClockTick4.wav');
+  audio.play();
 }
 
 
@@ -336,6 +343,7 @@ time --;
       var audio = new Audio('sounds/Brainstorm_AdvanceSound.wav');
       audio.play();
     return `
+    
     <p>No filter, no judgment; write out everything that comes into your head.</p>
   
     <textarea id="character" name="character" rows="40" cols="80">
