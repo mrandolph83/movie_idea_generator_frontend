@@ -92,7 +92,10 @@ sessionArray = []
  let brainstormLevel7 = document.querySelector("#plot-gen-btn-7")
  brainstormLevel7.addEventListener("click", (e) => 
 brainstormGenerate7(e))
-  
+
+let brainstormLevel8 = document.querySelector("#plot-gen-btn-8")
+brainstormLevel8.addEventListener("click", (e) => 
+brainstormGenerate8(e))
   
 
   //  Start of Plot Generator Genre Entry
@@ -316,133 +319,38 @@ document.querySelector("#twist-gen").innerHTML = sessionArray[i].twist;
 
 
 function brainstormGenerate2 (e) {
-
-  document.querySelector("#brainstorm-level-2").innerHTML = brain2return()
-  
-  function brain2return () {
-
-    var audio = new Audio('sounds/Brainstorm_AdvanceSound.wav');
-      audio.play();
-    return `    <p>What does your main character want? Can be the main goal of the story, could also be smaller personal/professional goals that could lead to sublots.</p>
-
-    <textarea id="character" name="character" rows="40" cols="80">
-      
-    </textarea><br> <br><br>
-  `
-  }
-
+  let answer1Return = document.querySelector("#brainfill1").value
+  document.querySelector("#your-idea-1").innerHTML = answer1Return
 }
 
 function brainstormGenerate3 (e) {
-
-  document.querySelector("#brainstorm-level-3").innerHTML = brain3return()
-  
-  function brain3return () {
-
-    var audio = new Audio('sounds/Brainstorm_AdvanceSound.wav');
-      audio.play();
-    return `     <p>What is/are your main character’s worst fear(s)? How can they face their fear(s) organically within your story? </p>    
-        
-    <textarea id="character" name="character" rows="40" cols="80">
-      
-    </textarea><br> <br><br>
-  `
-  }
-
+  let answer2Return = document.querySelector("#brainfill2").value
+  document.querySelector("#your-idea-2").innerHTML = answer2Return
 }
 
 function brainstormGenerate4 (e) {
-
-  document.querySelector("#brainstorm-level-4").innerHTML = brain4return()
-  
-  function brain4return () {
-
-    var audio = new Audio('sounds/Brainstorm_AdvanceSound.wav');
-      audio.play();
-    return `          <p>How does your main character relate to the people in their world? Not just the supporting characters but also those in the off-screen world – family, boss, neighbors, etc. </p>
-        
-    <textarea id="character" name="character" rows="40" cols="80">
-      
-    </textarea><br> <br><br>
-  `
-  }
+  let answer3Return = document.querySelector("#brainfill3").value
+  document.querySelector("#your-idea-3").innerHTML = answer3Return
 }
 
 function brainstormGenerate5 (e) {
-
-  document.querySelector("#brainstorm-level-5").innerHTML = brain5return()
-  
-  function brain5return () {
-
-    var audio = new Audio('sounds/Brainstorm_AdvanceSound.wav');
-      audio.play();
-    return `<p>Think of all the conflicts that stop your main character from achieving their goals - both external and internal. </p> 
-        
-    <textarea id="character" name="character" rows="40" cols="80">
-      
-    </textarea><br> <br><br>
-  `
-  }
+  let answer4Return = document.querySelector("#brainfill4").value
+  document.querySelector("#your-idea-4").innerHTML = answer4Return
 }
 
 function brainstormGenerate6 (e) {
-
-  document.querySelector("#brainstorm-level-6").innerHTML = brain6return()
-  
-  function brain6return () {
-
-    var audio = new Audio('sounds/Brainstorm_AdvanceSound.wav');
-      audio.play();
-    return ` <p>What potential conflicts will/may arise as the main character pursues their outer goal? If you’re 
-    writing a comedy, list all the funny scenarios you can come up with that they could run into trying 
-    to achieve their goal. If it’s a thriller or horror script, brainstorm all the terrifying things 
-    that could happen to them.  </p>
-  
-  <textarea id="character" name="character" rows="40" cols="80">
-    
-  </textarea><br> <br><br>
-  `
-  }
+  let answer5Return = document.querySelector("#brainfill5").value
+  document.querySelector("#your-idea-5").innerHTML = answer5Return
 }
 
 function brainstormGenerate7 (e) {
-
-  document.querySelector("#brainstorm-level-7").innerHTML = brain7return()
-  
-  function brain7return () {
-
-    var audio = new Audio('sounds/Brainstorm_AdvanceSound.wav');
-      audio.play();
-    return ` <p>Think about your main character’s point of view in terms of how they perceive the obstacles 
-    in front of them. Our biggest problems in life are not necessarily external, but are deep-rooted 
-    in our outlook. The minds of our characters are complicated. Try looking at every scene and 
-    challenging whether you’re coming at it from the right POV. As Robert McKee says, a character 
-    is defined by their behavior under pressure. Think up situations that would crank up the pressure 
-    and see what they do. In karate, if you’re trying to take someone down by pulling them in one 
-    direction, and it doesn’t work, stop wasting your energy. Instead, flip your perspective and 
-    yank them the opposite direction, and you’ll always get them flat on their back, with a lot 
-    less energy expended. The same is true in storytelling.
-    </p>
-    
-    <textarea id="character" name="character" rows="40" cols="80">
-    
-    </textarea><br> <br><br>
-  `
-  }
+  let answer6Return = document.querySelector("#brainfill6").value
+  document.querySelector("#your-idea-6").innerHTML = answer6Return
 }
 
 function brainstormGenerate8 (e) {
-
-  document.querySelector("#brainstorm-level-8").innerHTML = brain8return()
-  
-  function brain8return () {
-
-    var audio = new Audio('sounds/Brainstorm_AdvanceSound.wav');
-      audio.play();
-   const level1Return = document.querySelector("#user-idea-selection");
-   let level1Print = document.querySelector("#user-level1-print");
-   level1Print = level1Print.innerHTML = level1Return;
-  }
+  let answer7Return = document.querySelector("#brainfill7").value
+  document.querySelector("#your-idea-7").innerHTML = answer7Return
 }
 
 
@@ -515,24 +423,12 @@ var audio = new Audio('sounds/ClockTick6.wav');
     const ideaData = idea.data
     // render JSON response
     let newIdea = new Idea(ideaData, ideaData.attributes)
-    
+
+    var audio = new Audio('sounds/Brainstorm_AdvanceSound.wav');
+    audio.play();
+
     document.querySelector("#user-idea-selection").innerHTML =  newIdea.renderMovieIdea()
     
-    document.querySelector("#brain-1").innerHTML = brain1Return ()
-    function brain1Return () {
-      var audio = new Audio('sounds/Brainstorm_AdvanceSound.wav');
-      audio.play();
-    return `
-    
-    <h5>No filter, no judgment; write out everything that comes into your head.</h5>
-  
-    <textarea id="character" name="character" rows="40" cols="80">
-      
-    </textarea><br> <br><br>
-
-    
-    
-   `}
   })
 
   
