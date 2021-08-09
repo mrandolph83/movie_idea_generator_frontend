@@ -7,7 +7,6 @@ class Idea {
     this.setup = ideaAttributes.setup
     this.twist = ideaAttributes.twist
     this.genre_id = ideaAttributes.genre_id
-    this.generator_default = ideaAttributes.generator_default
     Idea.all.push(this)
     
   }
@@ -27,4 +26,3 @@ class Idea {
 }
 
 Idea.all = [];
-                            

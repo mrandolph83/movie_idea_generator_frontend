@@ -14,15 +14,29 @@ sessionArray = []
   
   getIdeas()
 
-  //  E.L. for user inputting data into Brainstormer form
+  //  E.L. for user inputting data into Brainstormer form (Below)
    const userBrainstormerForm = document.querySelector("#brainstormer-user-edit")
    userBrainstormerForm.addEventListener("submit", (e) => 
    createFormHandler(e))
 
-    //  E.L call for plot generator
-    const plotGenerator = document.querySelector("#plot-gen-btn")
-    plotGenerator.addEventListener("click", (e) => 
-    plotGenerate(e))
+  //  E.L call for plot generator
+   const plotGenerator = document.querySelector("#plot-gen-btn")
+   plotGenerator.addEventListener("click", (e) => 
+   plotGenerate(e))
+
+  // E.L Call for Shufle Buttons
+   let shuffleCharacter = document.getElementById('character-shuffle-btn')
+  shuffleCharacter.addEventListener("click", (e) => 
+  shuffleChar(e))
+
+  let shuffleSetup = document.getElementById('setup-shuffle-btn')
+  shuffleSetup.addEventListener("click", (e) => 
+  shuffleSet(e))
+
+  let shuffleTwist = document.getElementById('twist-shuffle-btn')
+  shuffleTwist.addEventListener("click", (e) => 
+  shuffleTwi(e))
+
 
   //  Start of Plot Generator Genre Entry
       const genreSelectionAction = document.querySelector("#genre-selection-action")
@@ -105,6 +119,7 @@ sessionArray = []
 // end of Plot Generator Genre Entry
 })
 
+
 // Fetch/get data from API
  function getIdeas() {
    fetch(endPoint)
@@ -119,6 +134,7 @@ sessionArray = []
         ideaSorter(newIdea)
 
         function ideaSorter(newIdea) {
+          if (newIdea.generator_default === true){
           if (newIdea.genre_id === 1) {
             actionArray.push(newIdea)
           }
@@ -136,11 +152,12 @@ sessionArray = []
             }
           else if (newIdea.genre_id === 6) {
             sciFiFantasyArray.push(newIdea)
-            }
+            }}
         }
        })
      })
  }
+
 
 // Plot Generator function
 function plotGenerate(e) {
@@ -161,8 +178,8 @@ function plotGenerate(e) {
         let endInt = sessionArray.length
         let i = Math.floor(Math.random() * endInt)
         document.querySelector("#character-gen").innerHTML = sessionArray[i].character;
-        // document.querySelector("#user-edit-char").innerHTML = sessionArray[i].character;
-        // document.querySelector("#brainstorm-character-gen").innerHTML = sessionArray[i].character;
+        document.querySelector("#user-edit-char").innerHTML = sessionArray[i].character;
+        document.querySelector("#brainstorm-character-gen").innerHTML = sessionArray[i].character;
        
       }
 
@@ -179,8 +196,8 @@ function plotGenerate(e) {
         let endInt = sessionArray.length
         let i = Math.floor(Math.random() * endInt)
         document.querySelector("#setup-gen").innerHTML = sessionArray[i].setup;
-        // document.querySelector("#user-edit-setup").innerHTML = sessionArray[i].setup;
-        // document.querySelector("#brainstorm-setup-gen").innerHTML = sessionArray[i].setup;
+        document.querySelector("#user-edit-setup").innerHTML = sessionArray[i].setup;
+        document.querySelector("#brainstorm-setup-gen").innerHTML = sessionArray[i].setup;
       }
 
      setTimeout(stopSetup, 3000)
@@ -196,8 +213,8 @@ function plotGenerate(e) {
         let endInt = sessionArray.length
         let i = Math.floor(Math.random() * endInt)
         document.querySelector("#twist-gen").innerHTML = sessionArray[i].twist;
-        // document.querySelector("#user-edit-twist").innerHTML = sessionArray[i].twist;
-        // document.querySelector("#brainstorm-twist-gen").innerHTML = sessionArray[i].twist;
+        document.querySelector("#user-edit-twist").innerHTML = sessionArray[i].twist;
+        document.querySelector("#brainstorm-twist-gen").innerHTML = sessionArray[i].twist;
       }
 
      setTimeout(stopTwist, 3500)
@@ -209,29 +226,68 @@ function plotGenerate(e) {
 }
 
 
+// Event Listeners for PlotGen Shuffle
 
- 
+
+
+function shuffleChar(e) {
+
+    let endInt = sessionArray.length
+    let i = Math.floor(Math.random() * endInt)
+    document.querySelector("#character-gen").innerHTML = sessionArray[i].character;
+    document.querySelector("#user-edit-char").innerHTML = sessionArray[i].character;
+    document.querySelector("#brainstorm-character-gen").innerHTML = sessionArray[i].character;
+    
+  }
+
+function shuffleSet(e) {
+
+  let endInt = sessionArray.length
+  let i = Math.floor(Math.random() * endInt)
+  document.querySelector("#setup-gen").innerHTML = sessionArray[i].setup;
+  document.querySelector("#user-edit-setup").innerHTML = sessionArray[i].setup;
+  document.querySelector("#brainstorm-setup-gen").innerHTML = sessionArray[i].setup;
+  }
+
+function shuffleTwi(e) {
+
+  let endInt = sessionArray.length
+  let i = Math.floor(Math.random() * endInt)
+  document.querySelector("#twist-gen").innerHTML = sessionArray[i].twist;
+  document.querySelector("#user-edit-twist").innerHTML = sessionArray[i].twist;
+  document.querySelector("#brainstorm-twist-gen").innerHTML = sessionArray[i].twist;
+  }
+
+
+  
+
+
+
 //  Brainstormer form, making variables/values upon "submit"
   function createFormHandler(e) {
   e.preventDefault()
 //  Add innerHTML apending to Brainstormer in this section
-  const characterInput = document.querySelector("#character").value
-  const setupInput = document.querySelector("#setup").value
-  const twistInput = document.querySelector("#twist").value
+  const characterInput = document.querySelector("#user-edit-char").value
+  const setupInput = document.querySelector("#user-edit-setup").value
+  const twistInput = document.querySelector("#user-edit-twist").value
   const genreInput = document.querySelector("#genre_id").value
-  postIdea(characterInput, setupInput, twistInput, genreInput)
+  const generatorDefault = false
+  
+  // debugger
+  postIdea(characterInput, setupInput, twistInput, genreInput, generatorDefault)
   }
 
- function postIdea(character, setup, twist, genre_id) {
+ function postIdea(character, setup, twist, genre_id, generator_default) {
   // confirm these values are coming through properly
-  document.querySelector("#character-selection").innerHTML = character;
-  document.querySelector("#setup-selection").innerHTML = setup;
-  document.querySelector("#twist-selection").innerHTML = twist;
-  document.querySelector("#genre-selection").innerHTML = genre_id;
+  // document.querySelector("#character-selection").innerHTML = character;
+  // document.querySelector("#setup-selection").innerHTML = setup;
+  // document.querySelector("#twist-selection").innerHTML = twist;
+  // document.querySelector("#genre-selection").innerHTML = genre_id;
 
   // build body object
-
+ 
   fetch(endPoint, {
+    
     // POST request
     method: "POST",
     headers: {"Content-Type": "application/json"},
@@ -239,13 +295,15 @@ function plotGenerate(e) {
       character: character,
       setup: setup,
       twist: twist,
-      genre_id: genre_id
+      genre_id:  genre_id,
+      generator_default: false
     })
   })
   .then(response => response.json())
   .then(idea => {
    
     console.log(idea);
+    
     const ideaData = idea.data
     // render JSON response
     let newIdea = new Idea(ideaData, ideaData.attributes)

@@ -1,3 +1,5 @@
+
+
 const endPoint = "http://127.0.0.1:3000/api/v1/ideas";
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -14,15 +16,34 @@ sessionArray = []
   
   getIdeas()
 
-  //  E.L. for user inputting data into Brainstormer form
-   const userBrainstormerForm = document.querySelector("#brainstormer-user-edit")
+  //  E.L. for user inputting data into Brainstormer form (Below)
+   const userBrainstormerForm = document.querySelector("#create-button")
    userBrainstormerForm.addEventListener("submit", (e) => 
    createFormHandler(e))
 
-    //  E.L call for plot generator
-    const plotGenerator = document.querySelector("#plot-gen-btn")
-    plotGenerator.addEventListener("click", (e) => 
-    plotGenerate(e))
+  //  E.L call for plot generator
+   const plotGenerator = document.querySelector("#plot-gen-btn")
+   plotGenerator.addEventListener("click", (e) => 
+   plotGenerate(e))
+
+  // E.L Call for Shufle Buttons
+   let shuffleCharacter = document.getElementById('character-shuffle-btn')
+  shuffleCharacter.addEventListener("click", (e) => 
+  shuffleChar(e))
+
+  let shuffleSetup = document.getElementById('setup-shuffle-btn')
+  shuffleSetup.addEventListener("click", (e) => 
+  shuffleSet(e))
+
+  let shuffleTwist = document.getElementById('twist-shuffle-btn')
+  shuffleTwist.addEventListener("click", (e) => 
+  shuffleTwi(e))
+
+  // E.L. call for Brainstorms 
+  let brainstorm1 = document.getElementById('brainstorm1-btn')
+  brainstorm1.addEventListener("click", (e) => 
+  brain1(e))
+
 
   //  Start of Plot Generator Genre Entry
       const genreSelectionAction = document.querySelector("#genre-selection-action")
@@ -105,6 +126,7 @@ sessionArray = []
 // end of Plot Generator Genre Entry
 })
 
+
 // Fetch/get data from API
  function getIdeas() {
    fetch(endPoint)
@@ -119,6 +141,7 @@ sessionArray = []
         ideaSorter(newIdea)
 
         function ideaSorter(newIdea) {
+          if (newIdea.generator_default === true){
           if (newIdea.genre_id === 1) {
             actionArray.push(newIdea)
           }
@@ -136,11 +159,12 @@ sessionArray = []
             }
           else if (newIdea.genre_id === 6) {
             sciFiFantasyArray.push(newIdea)
-            }
+            }}
         }
        })
      })
  }
+
 
 // Plot Generator function
 function plotGenerate(e) {
@@ -160,9 +184,10 @@ function plotGenerate(e) {
       function characterSelections () {
         let endInt = sessionArray.length
         let i = Math.floor(Math.random() * endInt)
+        debugger
         document.querySelector("#character-gen").innerHTML = sessionArray[i].character;
-        // document.querySelector("#user-edit-char").innerHTML = sessionArray[i].character;
-        // document.querySelector("#brainstorm-character-gen").innerHTML = sessionArray[i].character;
+        document.querySelector("#user-edit-char").innerHTML = sessionArray[i].character;
+        document.querySelector("#brainstorm-character-gen").innerHTML = sessionArray[i].character;
        
       }
 
@@ -179,8 +204,8 @@ function plotGenerate(e) {
         let endInt = sessionArray.length
         let i = Math.floor(Math.random() * endInt)
         document.querySelector("#setup-gen").innerHTML = sessionArray[i].setup;
-        // document.querySelector("#user-edit-setup").innerHTML = sessionArray[i].setup;
-        // document.querySelector("#brainstorm-setup-gen").innerHTML = sessionArray[i].setup;
+        document.querySelector("#user-edit-setup").innerHTML = sessionArray[i].setup;
+        document.querySelector("#brainstorm-setup-gen").innerHTML = sessionArray[i].setup;
       }
 
      setTimeout(stopSetup, 3000)
@@ -196,8 +221,8 @@ function plotGenerate(e) {
         let endInt = sessionArray.length
         let i = Math.floor(Math.random() * endInt)
         document.querySelector("#twist-gen").innerHTML = sessionArray[i].twist;
-        // document.querySelector("#user-edit-twist").innerHTML = sessionArray[i].twist;
-        // document.querySelector("#brainstorm-twist-gen").innerHTML = sessionArray[i].twist;
+        document.querySelector("#user-edit-twist").innerHTML = sessionArray[i].twist;
+        document.querySelector("#brainstorm-twist-gen").innerHTML = sessionArray[i].twist;
       }
 
      setTimeout(stopTwist, 3500)
@@ -209,8 +234,84 @@ function plotGenerate(e) {
 }
 
 
+// Event Listeners for PlotGen Shuffle
 
- 
+
+
+function shuffleChar(e) {
+
+    let endInt = sessionArray.length
+    let i = Math.floor(Math.random() * endInt)
+    debugger
+    document.querySelector("#character-gen").innerHTML = sessionArray[i].character;
+    document.querySelector("#user-edit-char").innerHTML = sessionArray[i].character;
+    document.querySelector("#brainstorm-character-gen").innerHTML = sessionArray[i].character;
+    
+  }
+
+function shuffleSet(e) {
+
+  let endInt = sessionArray.length
+  let i = Math.floor(Math.random() * endInt)
+  document.querySelector("#setup-gen").innerHTML = sessionArray[i].setup;
+  document.querySelector("#user-edit-setup").innerHTML = sessionArray[i].setup;
+  document.querySelector("#brainstorm-setup-gen").innerHTML = sessionArray[i].setup;
+  }
+
+function shuffleTwi(e) {
+
+  let endInt = sessionArray.length
+  let i = Math.floor(Math.random() * endInt)
+  document.querySelector("#twist-gen").innerHTML = sessionArray[i].twist;
+  document.querySelector("#user-edit-twist").innerHTML = sessionArray[i].twist;
+  document.querySelector("#brainstorm-twist-gen").innerHTML = sessionArray[i].twist;
+  }
+
+
+  // Brainstormer 
+  function brain1(e){
+  let i = ideaArray.length - 1
+  let idea = ideaArray[i]
+  const brain1Append = `
+  <p>No filter, no judgment; write out everything that comes into your head.</p>
+  
+
+  <h5 id="brainstorm-character-gen"> ${idea.character}</h5> 
+  <h5 id="brainstorm-setup-gen"> ${idea.setup} </h5> 
+  <h5 id="brainstorm-twist-gen"> ${idea.character} </h5> 
+  
+  <textarea id="character" name="character" rows="40" cols="80">
+    
+  </textarea><br> <br><br>
+
+  <button type="button" class="plot-gen-btn">🧠 On to Step 2! ⚡ 
+
+  </button><br>`
+  document.querySelector("#brainForm1").innerHTML = brain1Append;
+}
+
+function brain2(e){
+  
+  const brain1Append = `
+  <p>No filter, no judgment; write out everything that comes into your head.</p>
+  
+
+  <h5 id="brainstorm-character-gen"> Character</h5> 
+  <h5 id="brainstorm-setup-gen"> Setup </h5> 
+  <h5 id="brainstorm-twist-gen"> Twist </h5> 
+  
+  <textarea id="character" name="character" rows="40" cols="80">
+    
+  </textarea><br> <br><br>
+
+  <button type="button" class="plot-gen-btn">🧠 On to Step 2! ⚡ 
+
+  </button><br>`
+  document.querySelector("#brainForm1").innerHTML = brain1Append;
+}
+
+
+
 //  Brainstormer form, making variables/values upon "submit"
   function createFormHandler(e) {
   e.preventDefault()
@@ -239,7 +340,8 @@ function plotGenerate(e) {
       character: character,
       setup: setup,
       twist: twist,
-      genre_id: genre_id
+      genre_id: genre_id,
+      generator_default: false
     })
   })
   .then(response => response.json())
@@ -253,3 +355,4 @@ function plotGenerate(e) {
     document.querySelector("#idea-container").innerHTML +=  newIdea.renderMovieIdea()
   })
 }
+

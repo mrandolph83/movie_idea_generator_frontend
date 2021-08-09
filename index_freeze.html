@@ -74,43 +74,32 @@
    
    <br>
 
-
    <div class="flex-grid-thirds">
 
     <div class="col-1"><h5 id="character-gen"  ><br><br>Character</h5>
       <button type="submit" id="character-shuffle-btn" class="plot-shuffle-button">🔀</button> 
     </div>
 
-    <div class="col-2"><h5 id="setup-gen"><br><br>Setup</h5 id>
+    <div class="col-2"><h5 id="setup-gen"><br><br>Setup</h5>
       <button type="submit" id="setup-shuffle-btn" class="plot-shuffle-button">🔀</button> 
     </div>
 
-    <div class="col-3"><h5 id="twist-gen"><br><br>Twist</h5 id>
+    <div class="col-3"><h5 id="twist-gen"><br><br>Twist</h5>
       <button type="submit" id="twist-shuffle-btn" class="plot-shuffle-button">🔀</button> 
     </div>
 
+  </div>
+
+  <div id="idea-container">
   </div>
 
 
 
   <h1>🤔 The Brainstormer 🤔</h1>
   
-  <p>The below exercises are based on this fabulous article in Script magazine by Jeanne Veillette Bowerman. If you like this tool, I highly recommend 
-    reading the article and/or looking into Script magazine. These seven 15-minute exercises are designed to take your pitch to a fully-formed idea.
-     Once you are finished, check the bottom of the page, where you can see everything you have written and save a copy for yourself.
- Follow these prompts at your own pace, use the built-in timer if you wish, and good luck!
-    </p>
 
-    <button type="button" class="plot-gen-btn">🧠 Begin Brainstorm! ⚡ 
 
-    </button><br>
-
-  <!-- <div class="guidance-bar">
-  
-  <h4> <span style="color: #3772FF">A cop who doesn’t play by the rules </span> <br>
-    <span style="color: #FF3366">befriend(s) the creatures of the forest </span><br>
-    <span style="color: #2EC4B6">with a cunning elf, an obese ogre, and a belligerent dwarf </span></h4>
-    </div> -->
+    
 
     
       <h3>Customize Your Pitch</h3>
@@ -118,9 +107,10 @@
 <!-- Brainstormer User Edit Form  -->
       <form id="brainstormer-user-edit">
 
-    <span style="color: #3772FF">
-      <label for="character">Character</label><br>
-     <textarea id="character" name="character" value="" >
+  <span style="color: #3772FF">
+      <label for="character">Character</label> <br> 
+      
+     <textarea id="character" name="character" value="" rows="7" cols="50">
         
       </textarea><br><br>
     </span>
@@ -128,7 +118,7 @@
     <span style="color: #FF3366">
       <label for="setup">Setup</label><br>
 
-      <textarea id="setup" name="setup" value="" >
+      <textarea id="setup" name="setup" value="" rows="7" cols="50">
         
       </textarea><br><br>
     </span>
@@ -136,14 +126,14 @@
     <span style="color: #2EC4B6">
       <label for="twist">Twist</label><br>
 
-      <textarea id="twist" name="twist" value="" >
+      <textarea id="twist" name="twist" value="" rows="7" cols="50">
         
       </textarea><br>
     </span>
     </h4>
 
     <h4>
-    <input id="genre_id" name="genre-selection-action" type="radio" value=1>
+    <input id="genre_id" name="genre-id" type="radio" value=1>
     <label for="Action">Action</label>  
 
     <input id="genre_id" name="genre_id" type="radio" value=2>
@@ -163,16 +153,17 @@
 
     </h4>
 
+   
     <input id= 'create-button' type="submit" name="submit" value="Update Pitch" class="submit">
-  </form>
+    <button type="submit" class="plot-gen-btn" id="brainstorm1-btn">🧠 Begin Brainstorm! ⚡ 
 
+    </button><br>
 
-
-
-
-
-
-
+    <p>The below exercises are based on this fabulous article in Script magazine by Jeanne Veillette Bowerman. If you like this tool, I highly recommend 
+      reading the article and/or looking into Script magazine. These seven 15-minute exercises are designed to take your pitch to a fully-formed idea.
+       Once you are finished, check the bottom of the page, where you can see everything you have written and save a copy for yourself.
+   Follow these prompts at your own pace, use the built-in timer if you wish, and good luck!
+      </p>
 
     <!-- Step 1 Brainstorm -->
     <div class="guidance-bar">
@@ -180,15 +171,14 @@
       ⏰ <span style="color: #F8E16C">Step 1 - </span> Stream of Consciousness (15:00)  </h4>
     </h4>
   </div>
-  <p>No filter, no judgment; write out everything that comes into your head.</p>
+
+  <div id="brainForm1">
+  <!-- <p>No filter, no judgment; write out everything that comes into your head.</p>
   
 
-  <h3 id="character-selection"> </h3> 
-  <h3 id="setup-selection"> </h3> 
-  <h3 id="twist-selection"> </h3> 
-  <h3 id="genre-selection"> </h3> 
-  
-    
+  <h5 id="brainstorm-character-gen"> Character</h5> 
+  <h5 id="brainstorm-setup-gen"> Setup </h5> 
+  <h5 id="brainstorm-twist-gen"> Twist </h5> 
   
   <textarea id="character" name="character" rows="40" cols="80">
     
@@ -196,7 +186,8 @@
 
   <button type="button" class="plot-gen-btn">🧠 On to Step 2! ⚡ 
 
-  </button><br>
+  </button><br> -->
+  </div>
 
       <!-- Step 2 Brainstorm -->
       <div class="guidance-bar">
@@ -217,9 +208,7 @@
         
       </textarea><br> <br><br>
     
-      <button type="button" class="plot-gen-btn">🧠 On to Step 3! ⚡ 
-    
-      </button><br>
+      <button type="button" class="plot-gen-btn">🧠 On to Step 3! ⚡ </button><br>
 
         <!-- Step 3 Brainstorm -->
         <div class="guidance-bar">
@@ -482,3 +471,4 @@
  
 </body>
 </html>
+
