@@ -18,6 +18,7 @@ sessionArray = []
    const userBrainstormerForm = document.querySelector("#brainstormer-user-edit")
    userBrainstormerForm.addEventListener("submit", (e) => 
    createFormHandler(e))
+   
 
     //  E.L call for plot generator
     const plotGenerator = document.querySelector("#plot-gen-btn")
@@ -36,6 +37,15 @@ sessionArray = []
     let shuffleTwist = document.getElementById('twist-shuffle-btn')
     shuffleTwist.addEventListener("click", (e) => 
     shuffleTwi(e))
+
+    // E.L. for timers
+
+    
+  
+    const startButton1 = document.querySelector("#timer-start-1")
+ 
+  
+  
 
   //  Start of Plot Generator Genre Entry
       const genreSelectionAction = document.querySelector("#genre-selection-action")
@@ -253,7 +263,27 @@ document.querySelector("#twist-gen").innerHTML = sessionArray[i].twist;
 // document.querySelector("#brainstorm-twist-gen").innerHTML = sessionArray[i].twist;
 }
 
+// Timer function
 
+const startingMinutes = 15;
+let time = startingMinutes * 60;
+setInterval(updateCountdown, 1000);
+
+function updateCountdown() {
+  let countdownEl = document.querySelector("#time-left-display-1")
+  
+ 
+
+const minutes = Math.floor(time / 60);
+let seconds = time % 60;
+
+seconds = seconds < 10 ? '0' + seconds : seconds;
+
+countdownEl.innerHTML = `${minutes}:${seconds}`;
+
+time --;
+
+}
 
 
 
@@ -300,5 +330,24 @@ document.querySelector("#twist-gen").innerHTML = sessionArray[i].twist;
     let newIdea = new Idea(ideaData, ideaData.attributes)
     
     document.querySelector("#idea-container").innerHTML +=  newIdea.renderMovieIdea()
+    
+    document.querySelector("#brain-1").innerHTML = brain1Return ()
+    function brain1Return () {
+      var audio = new Audio('sounds/Brainstorm_AdvanceSound.wav');
+      audio.play();
+    return `
+    <p>No filter, no judgment; write out everything that comes into your head.</p>
+  
+    <textarea id="character" name="character" rows="40" cols="80">
+      
+    </textarea><br> <br><br>
+
+    <div>Time left = <span id="timer"></span></div>
+  
+    <button type="button" class="plot-gen-btn">🧠 On to Step 2! ⚡ 
+  
+    </button><br>`}
   })
+
+  
 }

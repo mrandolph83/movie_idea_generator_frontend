@@ -98,6 +98,12 @@ p {
       display: inline-block;
       font-size: 2em;
     }
+  .timer{
+      background-color:#419D78;
+      color:#EFD0CA;
+      font-size:20px;
+      text-align:center;
+    }
 
 
 
