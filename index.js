@@ -24,6 +24,19 @@ sessionArray = []
     plotGenerator.addEventListener("click", (e) => 
     plotGenerate(e))
 
+    // E.L Call for Shufle Buttons
+    let shuffleCharacter = document.getElementById('character-shuffle-btn')
+    shuffleCharacter.addEventListener("click", (e) => 
+    shuffleChar(e))
+  
+    let shuffleSetup = document.getElementById('setup-shuffle-btn')
+    shuffleSetup.addEventListener("click", (e) => 
+    shuffleSet(e))
+  
+    let shuffleTwist = document.getElementById('twist-shuffle-btn')
+    shuffleTwist.addEventListener("click", (e) => 
+    shuffleTwi(e))
+
   //  Start of Plot Generator Genre Entry
       const genreSelectionAction = document.querySelector("#genre-selection-action")
       genreSelectionAction.addEventListener("change", function(e){
@@ -161,7 +174,7 @@ function plotGenerate(e) {
         let endInt = sessionArray.length
         let i = Math.floor(Math.random() * endInt)
         document.querySelector("#character-gen").innerHTML = sessionArray[i].character;
-        // document.querySelector("#user-edit-char").innerHTML = sessionArray[i].character;
+        document.querySelector("#user-edit-character").innerHTML = sessionArray[i].character;
         // document.querySelector("#brainstorm-character-gen").innerHTML = sessionArray[i].character;
        
       }
@@ -179,7 +192,7 @@ function plotGenerate(e) {
         let endInt = sessionArray.length
         let i = Math.floor(Math.random() * endInt)
         document.querySelector("#setup-gen").innerHTML = sessionArray[i].setup;
-        // document.querySelector("#user-edit-setup").innerHTML = sessionArray[i].setup;
+        document.querySelector("#user-edit-setup").innerHTML = sessionArray[i].setup;
         // document.querySelector("#brainstorm-setup-gen").innerHTML = sessionArray[i].setup;
       }
 
@@ -196,7 +209,7 @@ function plotGenerate(e) {
         let endInt = sessionArray.length
         let i = Math.floor(Math.random() * endInt)
         document.querySelector("#twist-gen").innerHTML = sessionArray[i].twist;
-        // document.querySelector("#user-edit-twist").innerHTML = sessionArray[i].twist;
+        document.querySelector("#user-edit-twist").innerHTML = sessionArray[i].twist;
         // document.querySelector("#brainstorm-twist-gen").innerHTML = sessionArray[i].twist;
       }
 
@@ -208,6 +221,41 @@ function plotGenerate(e) {
   }
 }
 
+// Event Listeners for PlotGen Shuffle
+
+
+
+function shuffleChar(e) {
+
+  let endInt = sessionArray.length
+  let i = Math.floor(Math.random() * endInt)
+  document.querySelector("#character-gen").innerHTML = sessionArray[i].character;
+  // document.querySelector("#user-edit-char").innerHTML = sessionArray[i].character;
+  // document.querySelector("#brainstorm-character-gen").innerHTML = sessionArray[i].character;
+  
+}
+
+function shuffleSet(e) {
+
+let endInt = sessionArray.length
+let i = Math.floor(Math.random() * endInt)
+document.querySelector("#setup-gen").innerHTML = sessionArray[i].setup;
+// document.querySelector("#user-edit-setup").innerHTML = sessionArray[i].setup;
+// document.querySelector("#brainstorm-setup-gen").innerHTML = sessionArray[i].setup;
+}
+
+function shuffleTwi(e) {
+
+let endInt = sessionArray.length
+let i = Math.floor(Math.random() * endInt)
+document.querySelector("#twist-gen").innerHTML = sessionArray[i].twist;
+// document.querySelector("#user-edit-twist").innerHTML = sessionArray[i].twist;
+// document.querySelector("#brainstorm-twist-gen").innerHTML = sessionArray[i].twist;
+}
+
+
+
+
 
 
  
@@ -215,10 +263,11 @@ function plotGenerate(e) {
   function createFormHandler(e) {
   e.preventDefault()
 //  Add innerHTML apending to Brainstormer in this section
-  const characterInput = document.querySelector("#character").value
-  const setupInput = document.querySelector("#setup").value
-  const twistInput = document.querySelector("#twist").value
-  const genreInput = document.querySelector("#genre_id").value
+  const characterInput = document.querySelector("#user-edit-character").value
+  const setupInput = document.querySelector("#user-edit-setup").value
+  const twistInput = document.querySelector("#user-edit-twist").value
+  const genreInput = document.querySelector("#user-edit-genre_id").value
+  
   postIdea(characterInput, setupInput, twistInput, genreInput)
   }
 

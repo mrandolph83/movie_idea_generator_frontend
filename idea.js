@@ -7,6 +7,7 @@ class Idea {
     this.setup = ideaAttributes.setup
     this.twist = ideaAttributes.twist
     this.genre_id = ideaAttributes.genre_id
+    this.generator_default = false
     Idea.all.push(this)
     
   }
