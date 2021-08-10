@@ -180,41 +180,44 @@ brainstormGenerate8(e))
 })
 
 // Fetch/get data from API
- function getIdeas() {
-   fetch(endPoint)
-     .then(response => response.json())
-     .then(ideas => {
-      //  debugger
-      ideas.data.forEach(idea => {
-        
-        let newIdea = new Idea(idea, idea.attributes);
-        ideaArray.push(newIdea);
+function getIdeas() {
+  fetch(endPoint)
+    .then(response => response.json())
+    .then(ideas => {
+     //  debugger
+     ideas.data.forEach(idea => {
+       
+       let newIdea = new Idea(idea, idea.attributes);
+       ideaArray.push(newIdea);
 
-        ideaSorter(newIdea)
+       ideaSorter(newIdea)
 
-        function ideaSorter(newIdea) {
-          if (newIdea.genre_id === 1) {
-            actionArray.push(newIdea)
-          }
-          else if (newIdea.genre_id === 2) {
-            comedyArray.push(newIdea)
-            }
-          else if (newIdea.genre_id === 3) {
-            dramaArray.push(newIdea)
-            }
-          else if (newIdea.genre_id === 4) {
-            familyArray.push(newIdea)
-            }
-          else if (newIdea.genre_id === 5) {
-            horrorArray.push(newIdea)
-            }
-          else if (newIdea.genre_id === 6) {
-            sciFiFantasyArray.push(newIdea)
-            }
-        }
-       })
-     })
- }
+       function ideaSorter(newIdea) {
+         
+         if (newIdea.generator_default === true){
+         if (newIdea.genre_id === 1) {
+           actionArray.push(newIdea)
+         }
+         else if (newIdea.genre_id === 2) {
+           comedyArray.push(newIdea)
+           }
+         else if (newIdea.genre_id === 3) {
+           dramaArray.push(newIdea)
+           }
+         else if (newIdea.genre_id === 4) {
+           familyArray.push(newIdea)
+           }
+         else if (newIdea.genre_id === 5) {
+           horrorArray.push(newIdea)
+           }
+         else if (newIdea.genre_id === 6) {
+           sciFiFantasyArray.push(newIdea)
+           }}
+       }
+      })
+    })
+}
+
 
 // Plot Generator function
 function plotGenerate(e) {
@@ -321,36 +324,57 @@ document.querySelector("#twist-gen").innerHTML = sessionArray[i].twist;
 function brainstormGenerate2 (e) {
   let answer1Return = document.querySelector("#brainfill1").value
   document.querySelector("#your-idea-1").innerHTML = answer1Return
+
+  var audio = new Audio('sounds/Coin.mp3');
+  audio.play();
 }
 
 function brainstormGenerate3 (e) {
   let answer2Return = document.querySelector("#brainfill2").value
   document.querySelector("#your-idea-2").innerHTML = answer2Return
+
+  var audio = new Audio('sounds/Coin.mp3');
+  audio.play();
 }
 
 function brainstormGenerate4 (e) {
   let answer3Return = document.querySelector("#brainfill3").value
   document.querySelector("#your-idea-3").innerHTML = answer3Return
+
+  var audio = new Audio('sounds/Coin.mp3');
+  audio.play();
 }
 
 function brainstormGenerate5 (e) {
   let answer4Return = document.querySelector("#brainfill4").value
   document.querySelector("#your-idea-4").innerHTML = answer4Return
+
+  var audio = new Audio('sounds/Coin.mp3');
+  audio.play();
 }
 
 function brainstormGenerate6 (e) {
   let answer5Return = document.querySelector("#brainfill5").value
   document.querySelector("#your-idea-5").innerHTML = answer5Return
+
+  var audio = new Audio('sounds/Coin.mp3');
+  audio.play();
 }
 
 function brainstormGenerate7 (e) {
   let answer6Return = document.querySelector("#brainfill6").value
   document.querySelector("#your-idea-6").innerHTML = answer6Return
+
+  var audio = new Audio('sounds/Coin.mp3');
+  audio.play();
 }
 
 function brainstormGenerate8 (e) {
   let answer7Return = document.querySelector("#brainfill7").value
   document.querySelector("#your-idea-7").innerHTML = answer7Return
+
+  var audio = new Audio('sounds/Section7Submit.wav');
+  audio.play();
 }
 
 
@@ -428,6 +452,7 @@ var audio = new Audio('sounds/ClockTick6.wav');
     audio.play();
 
     document.querySelector("#user-idea-selection").innerHTML =  newIdea.renderMovieIdea()
+    document.querySelector("#your-idea-pitch").innerHTML =  newIdea.renderMovieIdea()
     
   })
 

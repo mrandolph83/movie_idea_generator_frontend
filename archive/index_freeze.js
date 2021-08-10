@@ -128,43 +128,42 @@ sessionArray = []
 
 
 // Fetch/get data from API
- function getIdeas() {
-   fetch(endPoint)
-     .then(response => response.json())
-     .then(ideas => {
-      //  debugger
-      ideas.data.forEach(idea => {
-        
-        let newIdea = new Idea(idea, idea.attributes);
-        ideaArray.push(newIdea);
+function getIdeas() {
+  fetch(endPoint)
+    .then(response => response.json())
+    .then(ideas => {
+     //  debugger
+     ideas.data.forEach(idea => {
+       
+       let newIdea = new Idea(idea, idea.attributes);
+       ideaArray.push(newIdea);
 
-        ideaSorter(newIdea)
+       ideaSorter(newIdea)
 
-        function ideaSorter(newIdea) {
-          if (newIdea.generator_default === true){
-          if (newIdea.genre_id === 1) {
-            actionArray.push(newIdea)
-          }
-          else if (newIdea.genre_id === 2) {
-            comedyArray.push(newIdea)
-            }
-          else if (newIdea.genre_id === 3) {
-            dramaArray.push(newIdea)
-            }
-          else if (newIdea.genre_id === 4) {
-            familyArray.push(newIdea)
-            }
-          else if (newIdea.genre_id === 5) {
-            horrorArray.push(newIdea)
-            }
-          else if (newIdea.genre_id === 6) {
-            sciFiFantasyArray.push(newIdea)
-            }}
-        }
-       })
-     })
- }
-
+       function ideaSorter(newIdea) {
+         if (newIdea.generator_default === true){
+         if (newIdea.genre_id === 1) {
+           actionArray.push(newIdea)
+         }
+         else if (newIdea.genre_id === 2) {
+           comedyArray.push(newIdea)
+           }
+         else if (newIdea.genre_id === 3) {
+           dramaArray.push(newIdea)
+           }
+         else if (newIdea.genre_id === 4) {
+           familyArray.push(newIdea)
+           }
+         else if (newIdea.genre_id === 5) {
+           horrorArray.push(newIdea)
+           }
+         else if (newIdea.genre_id === 6) {
+           sciFiFantasyArray.push(newIdea)
+           }}
+       }
+      })
+    })
+}
 
 // Plot Generator function
 function plotGenerate(e) {
