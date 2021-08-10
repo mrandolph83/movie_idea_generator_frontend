@@ -320,6 +320,10 @@ function brainstormGenerate2 (e) {
   let answer1Return = document.querySelector("#brainfill1").value
   document.querySelector("#your-idea-1").innerHTML = answer1Return
 
+  document.querySelector("#idea-header-1").innerHTML =  headerOne ()
+  function headerOne () {
+    return `Stream of Consciousness`
+  }
   var audio = new Audio('sounds/Coin.mp3');
   audio.play();
 }
@@ -328,6 +332,10 @@ function brainstormGenerate3 (e) {
   let answer2Return = document.querySelector("#brainfill2").value
   document.querySelector("#your-idea-2").innerHTML = answer2Return
 
+  document.querySelector("#idea-header-2").innerHTML =  headerOne ()
+  function headerOne () {
+    return `Character Goals`
+  }
   var audio = new Audio('sounds/Coin.mp3');
   audio.play();
 }
@@ -336,6 +344,10 @@ function brainstormGenerate4 (e) {
   let answer3Return = document.querySelector("#brainfill3").value
   document.querySelector("#your-idea-3").innerHTML = answer3Return
 
+  document.querySelector("#idea-header-3").innerHTML =  headerOne ()
+  function headerOne () {
+    return `Character Fears`
+  }
   var audio = new Audio('sounds/Coin.mp3');
   audio.play();
 }
@@ -344,6 +356,10 @@ function brainstormGenerate5 (e) {
   let answer4Return = document.querySelector("#brainfill4").value
   document.querySelector("#your-idea-4").innerHTML = answer4Return
 
+  document.querySelector("#idea-header-4").innerHTML =  headerOne ()
+  function headerOne () {
+    return `Character Relations`
+  }
   var audio = new Audio('sounds/Coin.mp3');
   audio.play();
 }
@@ -352,6 +368,10 @@ function brainstormGenerate6 (e) {
   let answer5Return = document.querySelector("#brainfill5").value
   document.querySelector("#your-idea-5").innerHTML = answer5Return
 
+  document.querySelector("#idea-header-5").innerHTML =  headerOne ()
+  function headerOne () {
+    return `Character Conflicts`
+  }
   var audio = new Audio('sounds/Coin.mp3');
   audio.play();
 }
@@ -360,6 +380,10 @@ function brainstormGenerate7 (e) {
   let answer6Return = document.querySelector("#brainfill6").value
   document.querySelector("#your-idea-6").innerHTML = answer6Return
 
+  document.querySelector("#idea-header-6").innerHTML =  headerOne ()
+  function headerOne () {
+    return `Conflict Scenarios`
+  }  
   var audio = new Audio('sounds/Coin.mp3');
   audio.play();
 }
@@ -368,6 +392,10 @@ function brainstormGenerate8 (e) {
   let answer7Return = document.querySelector("#brainfill7").value
   document.querySelector("#your-idea-7").innerHTML = answer7Return
 
+  document.querySelector("#idea-header-7").innerHTML =  headerOne ()
+  function headerOne () {
+    return `Point of View`
+  } 
   var audio = new Audio('sounds/Section7Submit.wav');
   audio.play();
 }

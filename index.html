@@ -35,7 +35,8 @@
 
   <!-- Page guidance bar -->
    <div class="guidance-bar">
-    🎬 Plot Generator 🤔 Brainstormer 💡 Your Idea 📚 Resources
+    <a href="#plot-generator-header"  style='color: white'>🎬 Plot Generator</a> <a href="#brainstomer-header" style='color: white'>🤔 Brainstormer</a> 
+    <a href="#idea-header" style='color: white'>💡 Your Idea</a> <a href="#resources-header" style='color: white'>📚 Resources</a>
    </div>
 
    <!-- Welcome text -->
@@ -48,7 +49,7 @@
    </p>
 
    <!-- Idea Generator -->
-   <h1>🎬 Plot Generator 🎬</h1>
+   <h1 id="plot-generator-header">🎬 Plot Generator 🎬</h1>
    <p>Select as many genre(s) as you want to be mixed into your movie idea. Once the Plot Generator has finished, feel free to
     shuffle 🔀 through each element individually. At any point, feel free to move on to the Brainstormer to begin sketching out your idea!
    </p>
@@ -95,7 +96,7 @@
     
   </div>
 
-  <h1>🤔 The Brainstormer 🤔</h1>
+  <h1 id="brainstomer-header">🤔 The Brainstormer 🤔</h1>
   
  
 
@@ -170,17 +171,9 @@
     <input id= 'create-button' type="submit" name="submit" value="🧠 Begin Brainstorm! ⚡ " class="sub-btn"></a></form>
   </form>
 
-
-
-
-
-
-  
-
-
-    <!-- Step 1 Brainstorm -->
+  <!-- Step 1 Brainstorm -->
     
-    <div class="guidance-bar">
+    <div class="guidance-bar" id="brain1-header">
     <h4 id="brain1-top">
       ⏰ <span style="color: #F8E16C">Step 1 - </span> Stream of Consciousness (15:00)  </h4>
     </h4>
@@ -200,10 +193,8 @@
 
 <input id= 'plot-gen-btn-2' type="submit" name="submit" value="🧠 SUBMIT STEP 1 ⚡"><br><br>
 
-
-
       <!-- Step 2 Brainstorm -->
-      <div class="guidance-bar">
+      <div class="guidance-bar" id="brain2-header">
         <h4>
           ⏰ <span style="color: #F8E16C">Step 2 - </span> Character Goals (15:00)  </h4>
         </h4>
@@ -223,11 +214,8 @@
 
       <input id= 'plot-gen-btn-3' type="submit" name="submit" value="🧠 SUBMIT STEP 2 ⚡"><br><br>
 
-
-  
-      
         <!-- Step 3 Brainstorm -->
-        <div class="guidance-bar">
+        <div class="guidance-bar" id="brain3-header">
           <h4>
             ⏰ <span style="color: #F8E16C">Step 3 - </span> Character Fears (15:00)  </h4>
           </h4>
@@ -245,7 +233,7 @@
         <input id= 'plot-gen-btn-4' type="submit" name="submit" value="🧠 SUBMIT STEP 3 ⚡"><br><br>
 
          <!-- Step 4 Brainstorm -->
-         <div class="guidance-bar">
+         <div class="guidance-bar" id="brain4-header">
           <h4>
             ⏰ <span style="color: #F8E16C">Step 4 - </span> Character Relations (15:00)  </h4>
           </h4>
@@ -263,7 +251,7 @@
         <input id= 'plot-gen-btn-5' type="submit" name="submit" value="🧠 SUBMIT STEP 4 ⚡" ><br><br>
 
          <!-- Step 5 Brainstorm -->
-         <div class="guidance-bar">
+         <div class="guidance-bar" id="brain5-header">
           <h4>
             ⏰ <span style="color: #F8E16C">Step 5 - </span> Character Conflicts (15:00)  </h4>
           </h4>
@@ -279,7 +267,7 @@
         <input id= 'plot-gen-btn-6' type="submit" name="submit" value="🧠 SUBMIT STEP 5 ⚡"><br><br>
 
         <!-- Step 6 Brainstorm -->
-        <div class="guidance-bar">
+        <div class="guidance-bar" id="brain6-header">
           <h4>
             ⏰ <span style="color: #F8E16C">Step 6 - </span> Conflict Scenarios (15:00)  </h4>
           </h4>
@@ -298,10 +286,8 @@
         <div id="brainstorm-level-6"></div>
         <input id= 'plot-gen-btn-7' type="submit" name="submit" value="🧠 SUBMIT STEP 6 ⚡"><br><br>
 
-        
-
         <!-- Step 7 Brainstorm -->
-        <div class="guidance-bar">
+        <div class="guidance-bar" id="brain7-header">
           <h4>
             ⏰ <span style="color: #F8E16C">Step 7 - </span> Point of View (15:00)  </h4>
            
@@ -326,52 +312,54 @@
         <div id="brainstorm-level-7"></div>
         <input id= 'plot-gen-btn-8' type="submit" name="submit" value="🧠 SUBMIT STEP 7 ⚡" >
 
-        <h1>💡 Your Idea 💡</h1>
+        <h1 id="idea-header">💡 Your Idea 💡</h1>
 
         <p>You did it, congratulations! 👏👏  <br><br>
           📁 save as pdf
         </p>
 
-        <div class="brainstorm-guide"> <span style="color: #F8E16C">| </span>Word Vomit   <span style="color: #F8E16C">| </span> Goals  
-          <span style="color: #F8E16C">  | </span> Fears  <span style="color: #F8E16C">| </span> Relations  <span style="color: #F8E16C">| </span> Conflicts  
-          <span style="color: #F8E16C">| </span> Scenarios  <span style="color: #F8E16C">| </span> POV <span style="color: #F8E16C">| </span>
+        <div class="guidance-bar"> <span style="color: #F8E16C">| </span><a href="#brain1-header"  style='color: white'>Stream of Consciousness</a>  <span style="color: #F8E16C">| </span>
+          <a href="#brain2-header"  style='color: white'> Goals</a> <span style="color: #F8E16C">  | </span> <a href="#brain3-header"  style='color: white'> Fears </a> 
+          <span style="color: #F8E16C">| </span> <a href="#brain4-header"  style='color: white'> Relations </a> <span style="color: #F8E16C">| </span> 
+          <a href="#brain5-header" style='color: white'> Conflicts </a> <span style="color: #F8E16C">| </span> <a href="#brain6-header" style='color: white'> Scenarios </a> 
+          <span style="color: #F8E16C">| </span> <a href="#brain7-header" style='color: white'> POV </a> <span style="color: #F8E16C">| </span>
       </div>
 
       <h4 id="your-idea-pitch"> </h4>
       
 
-      <h4> Stream of Consciousness </h4>
+      <h4 id="idea-header-1">  </h4>
 
       <p id="your-idea-1"></p>
         
 
-      <h4> Character Goals </h4>
+      <h4 id="idea-header-2"> </h4>
 
       <p id="your-idea-2"></p>
         
 
-      <h4> Character Fears </h4>
+      <h4 id="idea-header-3"></h4>
 
       <p id="your-idea-3"></p>
         
 
-      <h4> Character Relations </h4>
+      <h4 id="idea-header-4"></h4>
 
       <p id="your-idea-4"></p>
         
-      <h4> Character Conflicts </h4>
+      <h4 id="idea-header-5"></h4>
 
       <p id="your-idea-5"></p>
 
-      <h4> Conflict Scenarios </h4>
+      <h4 id="idea-header-6"></h4>
 
       <p id="your-idea-6"></p>
 
-      <h4> Point of View </h4>
+      <h4 id="idea-header-7"></h4>
 
       <p id="your-idea-7"></p>
 
-        <h1>📚 Resources 📚</h1>
+        <h1 id="resources-header">📚 Resources 📚</h1>
         <p>This tool was created with heavy inspiration and large portions of text taken from the Movie Plot Generator book (2004, Brothers Heimberg Press), 
           as well as the March 25, 2014 Script Magazine article, “Jeanne's Screenwriting Tip: 7 Brainstorming Techniques,” written by Jeanne Veillette Bowerman. 
           In addition to these resources, elements in the Idea Generator have also been pulled from the following sites. I recommend checking into these resources 
@@ -397,13 +385,5 @@
           
            <p>Film Daily<br>
           http://www.filmdaily.tv</p>
-          
-      
-
-
-
-  
-   
- 
 </body>
 </html>
