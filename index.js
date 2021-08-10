@@ -257,7 +257,6 @@ function plotGenerate(e) {
         let i = Math.floor(Math.random() * endInt)
         document.querySelector("#setup-gen").innerHTML = sessionArray[i].setup;
         document.querySelector("#user-edit-setup").innerHTML = sessionArray[i].setup;
-        // document.querySelector("#brainstorm-setup-gen").innerHTML = sessionArray[i].setup;
       }
 
      setTimeout(stopSetup, 3000)
@@ -274,7 +273,6 @@ function plotGenerate(e) {
         let i = Math.floor(Math.random() * endInt)
         document.querySelector("#twist-gen").innerHTML = sessionArray[i].twist;
         document.querySelector("#user-edit-twist").innerHTML = sessionArray[i].twist;
-        // document.querySelector("#brainstorm-twist-gen").innerHTML = sessionArray[i].twist;
       }
 
      setTimeout(stopTwist, 3500)
@@ -294,8 +292,7 @@ function shuffleChar(e) {
   let endInt = sessionArray.length
   let i = Math.floor(Math.random() * endInt)
   document.querySelector("#character-gen").innerHTML = sessionArray[i].character;
-  // document.querySelector("#user-edit-char").innerHTML = sessionArray[i].character;
-  // document.querySelector("#brainstorm-character-gen").innerHTML = sessionArray[i].character;
+  document.querySelector("#user-edit-character").innerHTML = sessionArray[i].character;
   
 }
 
@@ -304,8 +301,7 @@ function shuffleSet(e) {
 let endInt = sessionArray.length
 let i = Math.floor(Math.random() * endInt)
 document.querySelector("#setup-gen").innerHTML = sessionArray[i].setup;
-// document.querySelector("#user-edit-setup").innerHTML = sessionArray[i].setup;
-// document.querySelector("#brainstorm-setup-gen").innerHTML = sessionArray[i].setup;
+document.querySelector("#user-edit-setup").innerHTML = sessionArray[i].setup;
 }
 
 function shuffleTwi(e) {
@@ -313,8 +309,7 @@ function shuffleTwi(e) {
 let endInt = sessionArray.length
 let i = Math.floor(Math.random() * endInt)
 document.querySelector("#twist-gen").innerHTML = sessionArray[i].twist;
-// document.querySelector("#user-edit-twist").innerHTML = sessionArray[i].twist;
-// document.querySelector("#brainstorm-twist-gen").innerHTML = sessionArray[i].twist;
+document.querySelector("#user-edit-twist").innerHTML = sessionArray[i].twist;
 }
 
 
