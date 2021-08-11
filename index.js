@@ -430,6 +430,8 @@ var audio = new Audio('sounds/ClockTick6.wav');
 
 
 
+
+
  
 //  Brainstormer form, making variables/values upon "submit"
   function createFormHandler(e) {
@@ -442,6 +444,24 @@ var audio = new Audio('sounds/ClockTick6.wav');
   
   postIdea(characterInput, setupInput, twistInput, genreInput)
   }
+
+
+
+  function deleteIdea() {
+    let locationDataId = event.target.dataset.id;
+    fetch(`http://localhost:3000/api/v1/locations/${locationDataId}`, {
+      method: "DELETE",
+    })
+      .then((response) => response.json())
+      .then((json) => {
+        let selectedLocation = document.querySelector(
+          `.card[data-id="${locationDataId}"]`
+        );
+        selectedLocation.remove();
+      });
+  }
+
+
 
  function postIdea(character, setup, twist, genre_id) {
   // confirm these values are coming through properly

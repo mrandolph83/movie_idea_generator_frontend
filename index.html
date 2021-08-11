@@ -44,7 +44,7 @@
    <p>This writing tool is inspired by the <a href="https://www.google.com/search?q=movie+plot+generator+book&rlz=1C5CHFA_enUS848US848&source=lnms&tbm=shop&sa=X&ved=2ahUKEwi5qrTVhYryAhWSXc0KHf7BB1IQ_AUoBHoECAEQBg&biw=1508&bih=865" target="_blank">Movie Plot Generator</a> book, and is a fun and effective way to generate 
      script ideas of your own. Check out the Plot Generator to create an outlandish logline to start with, or create one on your own by going straight to the Sketchpad. Inspired by
      the <a href="https://scriptmag.com/features/jeannes-tuesday-screenwriting-tip-brainstorming-techniques" target="_blank">7-Step Brainstorming Technique </a> by Script Magazine's Jeanne Veillette Bowerman, in about 2 hours you can take your logline
-     to a fleshed-out idea, save it to your account, or save it as a PDF so you can start writing it out as a script. Happy writing! ✍️
+     to a fleshed-out idea, and print it so you can start writing it out as a script. Happy writing! ✍️
     
    </p>
 
@@ -97,16 +97,6 @@
   </div>
 
   <h1 id="brainstomer-header">🤔 The Brainstormer 🤔</h1>
-  
- 
-
-  <!-- <div class="guidance-bar">
-  
-  <h4> <span style="color: #3772FF">A cop who doesn’t play by the rules </span> <br>
-    <span style="color: #FF3366">befriend(s) the creatures of the forest </span><br>
-    <span style="color: #2EC4B6">with a cunning elf, an obese ogre, and a belligerent dwarf </span></h4>
-    </div> -->
-
     
       <h3>Customize Your Pitch</h3>
 
@@ -129,7 +119,7 @@
     </span>
 
     <span style="color: #2EC4B6">
-      <label for="twist">Twist</label><br>
+      <label for="twist"> Twist</label><br>
 
       <textarea id="user-edit-twist" name="twist" value="" rows="7" cols="50" >
         
@@ -137,7 +127,7 @@
     </span>
     </h4>
 
-    <h4>
+    <h5>
     <input id="user-edit-genre_id" name="genre-selection-action" type="radio" value=1>
     <label for="Action">Action</label>  
 
@@ -156,7 +146,7 @@
     <input id="user-edit-genre_id" name="genre_id" type="radio" value=6>
     <label for="Sci-Fi/Fantasy">Sci-Fi/Fantasy</label>   
 
-    </h4>
+    </h5>
 
     <p>The below exercises are based on this fabulous article in Script magazine by Jeanne Veillette Bowerman. If you like this tool, I highly recommend 
       reading the article and/or looking into Script magazine. These seven 15-minute exercises are designed to take your pitch to a fully-formed idea.
@@ -168,12 +158,16 @@
   
       </button><br> -->
 
-    <input id= 'create-button' type="submit" name="submit" value="🧠 Begin Brainstorm! ⚡ " class="sub-btn"></a></form>
-  </form>
+    <input id= 'create-button' type="submit" name="submit" value="🧠 Begin Brainstorm! ⚡" class="sub-btn"></a>
+    </form><br><br>
+
+    
+
+  
 
   <!-- Step 1 Brainstorm -->
     
-    <div class="guidance-bar" id="brain1-header">
+  <div class="guidance-bar" id="brain1-header">
     <h4 id="brain1-top">
       ⏰ <span style="color: #F8E16C">Step 1 - </span> Stream of Consciousness (15:00)  </h4>
     </h4>
@@ -315,7 +309,9 @@
         <h1 id="idea-header">💡 Your Idea 💡</h1>
 
         <p>You did it, congratulations! 👏👏  <br><br>
-          📁 save as pdf
+         <button onclick="window.print();">
+            🖨️ Print
+            </button>
         </p>
 
         <div class="guidance-bar"> <span style="color: #F8E16C">| </span><a href="#brain1-header"  style='color: white'>Stream of Consciousness</a>  <span style="color: #F8E16C">| </span>
@@ -325,6 +321,11 @@
           <span style="color: #F8E16C">| </span> <a href="#brain7-header" style='color: white'> POV </a> <span style="color: #F8E16C">| </span>
       </div>
 
+      
+
+
+     
+      <div class="print-container">
       <h4 id="your-idea-pitch"> </h4>
       
 
@@ -358,6 +359,7 @@
       <h4 id="idea-header-7"></h4>
 
       <p id="your-idea-7"></p>
+    </div>
 
         <h1 id="resources-header">📚 Resources 📚</h1>
         <p>This tool was created with heavy inspiration and large portions of text taken from the Movie Plot Generator book (2004, Brothers Heimberg Press), 
